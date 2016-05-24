@@ -1,0 +1,10 @@
+G:\MyProjects\Lcms_4.0.2_sql_src_Ultimate\Lcms.Web\bin\Lcms.Web.Plugin.Forum.dll
+G:\MyProjects\Lcms_4.0.2_sql_src_Ultimate\Lcms.Web\bin\Lcms.Web.Plugin.Forum.pdb
+G:\MyProjects\Lcms_4.0.2_sql_src_Ultimate\Lcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.csprojResolveAssemblyReference.cache
+G:\MyProjects\Lcms_4.0.2_sql_src_Ultimate\Lcms.Web\plugins\forum\obj\Debug\Lcms.Web.Plugin.Forum.dll
+G:\MyProjects\Lcms_4.0.2_sql_src_Ultimate\Lcms.Web\plugins\forum\obj\Debug\Lcms.Web.Plugin.Forum.pdb
+G:\MyProjects\DTcms_4.0.2_sql_src_Ultimate\DTcms.Web\bin\DTcms.Web.Plugin.Forum.dll
+G:\MyProjects\DTcms_4.0.2_sql_src_Ultimate\DTcms.Web\bin\DTcms.Web.Plugin.Forum.pdb
+G:\MyProjects\DTcms_4.0.2_sql_src_Ultimate\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.dll
+G:\MyProjects\DTcms_4.0.2_sql_src_Ultimate\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb
+G:\MyProjects\DTcms_4.0.2_sql_src_Ultimate\DTcms.Web\plugins\forum\obj\Debug\DTcms.Web.Plugin.Forum.csprojResolveAssemblyReference.cache

@@ -1,0 +1,35 @@
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.Common\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.Common\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.Common\obj\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.Common\obj\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\test\DTcms.Common\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\test\DTcms.Common\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\test\DTcms.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\test\DTcms.Common\obj\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\test\DTcms.Common\obj\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.Common\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.Common\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.Common\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.Common\obj\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.Common\obj\Debug\DTcms.Common.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.Common\bin\Debug\DTcms.Common.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.Common\bin\Debug\DTcms.Common.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.Common\obj\Debug\DTcms.Common.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.Common\obj\Debug\DTcms.Common.pdb
+F:\Project\DTcms.4.0.1\DTcms.Common\bin\Debug\DTcms.Common.dll
+F:\Project\DTcms.4.0.1\DTcms.Common\bin\Debug\DTcms.Common.pdb
+F:\Project\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
+F:\Project\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.dll
+F:\Project\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.Common\bin\Debug\DTcms.Common.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.Common\bin\Debug\DTcms.Common.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.Common\obj\Debug\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.Common\bin\Debug\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.Common\bin\Debug\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Debug\DTcms.Common.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Debug\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Debug\DTcms.Common.pdb

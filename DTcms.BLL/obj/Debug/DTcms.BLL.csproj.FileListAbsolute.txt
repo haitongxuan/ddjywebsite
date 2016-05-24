@@ -1,0 +1,92 @@
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.Model.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.Model.dll
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\test\DTcms.BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\test\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\test\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.Model.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.Common.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.Model.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Common.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Model.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+F:\Project\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+F:\Project\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+F:\Project\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Common.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Model.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Model.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Model.xml

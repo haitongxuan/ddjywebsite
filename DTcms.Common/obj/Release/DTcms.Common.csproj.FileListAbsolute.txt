@@ -1,0 +1,5 @@
+E:\DTCms\DTcms.4.0.2\DTcms.Common\bin\Release\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.Common\bin\Release\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Release\DTcms.Common.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Release\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.Common\obj\Release\DTcms.Common.pdb

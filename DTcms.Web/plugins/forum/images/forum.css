@@ -1,0 +1,69 @@
+﻿.forum-board-ico { display:block; width:64px; height:64px; background:url("forum-board-ico.png"); }
+
+.board { border:1px solid #ebebeb; margin-top:12px; text-align:left; }
+.board-title { line-height:32px; background:#F2F2F2; border-bottom:1px solid #ebebeb; font-size:16px; color:#333; font-weight:bold; text-indent:1em; }
+.board-main { padding:10px 20px; background:#FFF; }
+.board-list { margin:0 auto; }
+.board-list li { width:100%;  border-bottom:1px solid #ebebeb; position:relative; }
+.boarditem-left { margin-right:200px; position:relative;}
+.boarditem-left .image { float:left; width:64px; height:64px; margin:10px 10px 20px 20px; }
+.boarditem-left .txt { margin-left:94px; font-size:12px;  color:#555;  }
+.boarditem-left .txt .title { font-size:16px; font-weight:bold; color:#F9981C; line-height:36px; }
+.boarditem-left .txt .dec { line-height:18px; color:#777; }
+.boarditem-left .txt .moderator { color:#333; margin-top:6px;}
+.boarditem-left .txt .moderator span { color:#111; }
+.boarditem-right { width: 180px; position: absolute; right: 20px; top: 0;}
+.boarditem-right .postcount { text-align:right; margin-top:32px; font-size:12px; color:#555; width:100%; }
+	
+
+.top-tools { width:100%; height:60px; position:relative;}
+.bottom-tools {width:100%; position:relative; height:60px; margin-top:20px; }
+.post-list { border:1px solid #EFEFEF;  position:relative;  text-align:left; font-size:12px; }
+.post-list-title {padding:0px 20px; line-height:32px; background:#F2F2F2; border-bottom:1px solid #EFEFEF; }
+.post-list-main { padding:10px 20px; background:#FFF; }
+.post-list-main ul { width:100%; margin:0 auto; }
+.post-list-main li { width:100%; border-bottom:1px dashed #EFEFEF; color:#555;  }
+.post-list-main .item {  background:url(folder_common.gif) no-repeat 4px 13px; height:46px; color:#111; text-indent:2em; font-size:14px; }
+.post-list-main li span { font-size:14px; color:#000; }
+
+.pub-title,.pub-content ,.pub-submit { text-align:left; font-size:12px; }
+.pub-title { height:42px; }
+.pub-content { min-height: 400px; }
+.pub-submit { height:60px; }
+
+.tools-left { width:100px; float:left; text-align:left; position:absolute; left:0; top:0 }
+.tools-right { margin-left:120px;}
+
+.post-show { border:1px solid #ebebeb;  position:relative;  text-align:left; font-size:12px; }
+.post-show ul { }
+.post-show li { width:100%; border-bottom:1px solid #ebebeb; position:relative; line-height:180%;}
+
+.post-show-left { width:150px; float:left; text-align:left; position:absolute; left:0; top:0; background:#F7F7F7;  height:100%; padding:0px 10px 0px 10px; word-spacing:6px; }
+.post-show-right { margin-left:170px; height:100%; border-left:1px solid #E0E0E0; padding:0px 10px 0px 10px; }
+.post-show-top { width:100%; border-bottom:1px dashed #E0E0E0; line-height:32px; color:#777;}
+.post-show-leftl { width:150px; float:left; text-align:left; position:absolute; left:0; top:0; background:#F7F7F7;  height:100%; padding:0px 10px 0px 10px; word-spacing:6px;text-align:center }
+.post-show-mid { width:100%; min-height:200px; }
+.post-show-mid .cm { line-height:180%; font-size:14px; color:#555; margin:10px 0px;}
+.post-show-mid .uinfo { width:130px; margin:10px auto; }
+.post-show-mid .uinfo img { width:120px; border:5px solid #FFF; }
+.post-show-mid .uinfo p { padding-top:10px;}
+.post-show-bottom { width:100%; border-top:1px dashed #E0E0E0; line-height:32px; color:#777;}
+
+
+.lihover { background-color:#F7F7F7; }
+.yinying{ border:1px solid #ebebeb; border-radius:6px; -moz-box-shadow:0px 2px 13px #e9e9e9; -webkit-box-shadow:0px 2px 13px #e9e9e9; box-shadow:0px 2px 13px #e9e9e9; }
+
+.span01 { color:#F90; line-height:36px;}
+.span02 { font-size:16px; font-weight:bold; letter-spacing:1px; color:#111; line-height:36px;}
+.span03 { color:#999;}
+.span04 { color:#F90;}
+.span05 { color:#999; float:right; padding-right:20px; word-spacing:6px; }
+.span06 { color:#999;}
+
+.sitemap { line-height:36px; border:1px solid #ebebeb; background:#FFFFFF; margin-top:18px; text-indent:1em; font-size:12px;}
+
+.op-list { position:relative; line-height:32px; clear:both; margin-top:10px; }
+.op-list dt { position:absolute; width:100px; top:0; left:0; text-align:right; }
+.op-list dd { margin-left:110px; text-align:left; padding-top:6px;}
+
+em { color:#999; font-size:11px;}

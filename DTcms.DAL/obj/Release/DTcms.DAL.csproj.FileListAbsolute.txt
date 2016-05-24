@@ -1,0 +1,11 @@
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.DAL.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.DAL.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.Model.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.DBUtility.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Release\DTcms.Model.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Release\DTcms.DAL.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Release\DTcms.DAL.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Release\DTcms.DAL.pdb

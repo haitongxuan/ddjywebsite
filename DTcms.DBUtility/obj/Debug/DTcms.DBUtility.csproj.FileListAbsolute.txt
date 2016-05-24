@@ -1,0 +1,49 @@
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\svn\dtcms4sql\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\test\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\test\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\test\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\test\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\test\DTcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\test\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\test\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+E:\动力启航\DTcms\商业源码\4.0\旗舰版\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+D:\Document And Settings3\laoqiu\Personal\Tencent Files\130990851\FileRecv\旗舰版\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+F:\Project\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+C:\Users\justable\Documents\Tencent Files\545342736\FileRecv\DTcms.4.0.1\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb

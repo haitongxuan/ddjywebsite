@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>交互论坛 - {site.name}</title>
+<meta content="{site.seo_keyword}" name="keywords" />
+<meta content="{site.seo_description}" name="description" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}plugins/forum/images/forum.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}plugins/forum/image/dnt.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}plugins/forum/image/float.css" />
+<link type="text/css" rel="stylesheet" href="<%templateskin="main"%>/css/style.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<%template skin="main" src="_header.html"%>
+<!--/Header-->
+
+<div class="mainpage">
+<div class="section" >
+	<div class="sitemap">当前位置：<a href="<%linkurl("index")%>">首页</a> > <a href="<%linkurl("forum")%>">交互论坛</a></div>
+</div>
+</div>
+
+<link type="text/css" rel="stylesheet" href="{config.webpath}plugins/forum/image/forumhot.css" />
+
+<div class="main cl forumhot">
+    <table width="100%" cellspacing="0" cellpadding="0">
+	    <tbody>
+	        <tr>
+		        <td>
+		            <div class="title_bar xg2">
+                        <ul id="tabswi1_A" class="tab_forumhot">
+			                <li><a href="javascript:;">热帖榜</a></li>
+				            <li style="padding-left:510px"><a href="javascript:;">新帖榜</a></li>
+				        </ul>
+                    </div>
+		            <div id="tabswi1_B" class="pd cl">
+                        <div class="newHotB" style="">	
+				            <ul class="hotlist cl one">
+                            <%set DataTable postList1=new DTcms.Web.Plugin.Forum.post_list().get_post_list(10, "is_lock=0 and post_type=1", "click desc")%>
+                            <%foreach(DataRow dr1 in postList1.Rows)%>
+						        <li>
+					                <em>[ {dr1[click]} ]</em>
+					                <a href="<%linkurl("forumpostshow",{dr1[id]})%>" target="_blank">{dr1[title]}</a>
+					            </li>
+                            <%/foreach%>
+                            </ul>
+
+				            <ul class="hotlist cl one">
+                            <%set DataTable postList2=new DTcms.Web.Plugin.Forum.post_list().get_post_list(10, "is_lock=0 and post_type=1", "add_time desc")%>
+                            <%foreach(DataRow dr2 in postList2.Rows)%>
+						        <li>
+					                <em>[ {dr2[click]} ]</em>
+					                <a href="<%linkurl("forumpostshow",{dr2[id]})%>" target="_blank">{dr2[title]}</a>
+					            </li>
+			                <%/foreach%>
+					        </ul>
+
+			            </div>
+		            </div>
+		        </td>
+
+	        </tr>
+	    </tbody>
+    </table>
+</div>
+
+
+
+<!--topic-->
+<div class="main cl" id="wp">
+
+    <%set DataTable boardList3=new DTcms.Web.Plugin.Forum.board().get_board_getchildlist(0)%>
+    <%foreach(DataRow dr3 in boardList3.Rows)%>
+	<div class="mainbox list">
+		<div class="titlebar xg2">
+            <span class="y">
+            分区版主：{dr3[moderator_list]}
+			</span>
+			<h2>{dr3[boardname]}</h2>
+		</div>
+		<div class="fi" style="">
+		<table cellspacing="0" cellpadding="0">
+
+          <%set DataTable boardList4=new DTcms.Web.Plugin.Forum.board().get_board_getchildlist({strtoint({dr3[id]})})%>
+          <%foreach(DataRow dr4 in boardList4.Rows)%>
+		  <tbody>
+			<tr>
+			  <th class="notopic">
+				<h2><a href="<%linkurl("forumpostlist",{dr4[id]})%>">{dr4[boardname]}</a></h2>
+				<p><%cutstring({dr4[content]},98)%></p>
+			  </th>
+			  <td class="nums"><em>主题：{dr4[subject_count]} / 帖子：{dr4[post_count]}</em></td>
+			</tr>
+		</tbody>
+        <%/foreach%>
+	
+	    </table>
+	    </div>
+     </div>
+<%/foreach%>
+
+</div>
+<!--end topic-->
+
+<!--Footer-->
+<%template skin="main" src="_footer.html"%>
+<!--/Footer-->	
+</body>
+</html>

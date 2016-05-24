@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发帖 - {site.name}</title>
+<meta content="{site.seo_keyword}" name="keywords" />
+<meta content="{site.seo_description}" name="description" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}plugins/forum/images/forum.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}css/validate.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}css/pagination.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}scripts/artdialog/ui-dialog.css" />
+<link type="text/css" rel="stylesheet" href="<%templateskin="main"%>/css/style.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.form.min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" charset="utf-8" src="{config.webpath}editor/kindeditor-min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/artdialog/dialog-plus-min.js"></script>
+<script type="text/javascript" src="<%templateskin="main"%>/js/common.js"></script>
+<script type="text/javascript">
+    function jsdialog(msgtitle, msgcontent, url, callback) {
+        var d = dialog({
+            title: msgtitle,
+            content: msgcontent,
+            okValue: '确定',
+            ok: function () { },
+            onclose: function () {
+                if (url == "back") {
+                    history.back(-1);
+                } else if (url != "") {
+                    location.href = url;
+                }
+                //执行回调函数
+                if (argnum == 5) {
+                    callback();
+                }
+            }
+        }).showModal();
+    }
+
+    $(function () {
+        //初始化表单验证
+        AjaxInitForm('#pub_form', '#btnSubmit', 1, '#rurl');
+
+        
+
+        //初始化编辑器
+        var editorMini = KindEditor.create('.editor-mini', {
+            width: '100%',
+            height: '360px',
+            resizeType: 0,
+            uploadJson: '{config.webpath}tools/upload_ajax.ashx?action=EditorFile&IsWater=0',
+            items: [
+				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+            afterBlur: function () { this.sync(); }
+        });
+        
+    });
+   
+</script>
+</head>
+<body>
+<!--Header-->
+<%template skin="main" src="_header.html"%>
+<!--/Header-->
+<div class="mainpage">
+  <div class="section1" style="width:1002px; margin:0 auto; clear:both; background:#FFF; ">
+    <form id="pub_form" name="pub_form" method="post"  url="{config.webpath}plugins/forum/ajax.ashx?action={action}">
+      <div style="border:1px solid #B5B5B5; margin-top:20px; padding:20px;">
+        <div class="pub-title">
+          <input id="txtTitle" name="txtTitle" type="text" class="input txt" datatype="*" sucmsg=" " value="{title}"  style="width:360px;" />
+          <input id="txtBoardID" name="txtBoardID" type="hidden" value="{board_id}" />
+          <input id="txtPostID" name="txtPostID" type="hidden" value="{post_id}" />
+          <span class="Validform_checktip">*帖子标题,最多100个字符</span></div>
+        <div class="pub-content">
+          <textarea id="txtContent" class="editor-mini"  name="txtcontent">{content}</textarea>
+        </div>
+        <div class="pub-submit">
+          <input id ="rurl" name="rurl" type="hidden" value="{rurl}" />
+          <input id="btnSubmit" name="btnSubmit" type="submit" value="提交帖子" class="btn" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--Footer-->
+<%template skin="main" src="_footer.html"%>
+<!--/Footer-->
+</body>
+</html>

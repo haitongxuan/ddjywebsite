@@ -1,0 +1,7 @@
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Release\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Release\DTcms.DBUtility.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Release\DTcms.Common.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\bin\Release\DTcms.Common.pdb
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Release\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Release\DTcms.DBUtility.dll
+E:\DTCms\DTcms.4.0.2\DTcms.DBUtility\obj\Release\DTcms.DBUtility.pdb
