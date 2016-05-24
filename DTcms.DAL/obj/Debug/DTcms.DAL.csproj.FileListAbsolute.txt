@@ -76,3 +76,15 @@ E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReferenc
 E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 E:\DTCms\DTcms.4.0.2\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
 E:\DTCms\DTcms.4.0.2\DTcms.DAL\bin\Debug\DTcms.Model.xml
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DAL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Common.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DBUtility.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Common.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DBUtility.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.xml
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.pdb

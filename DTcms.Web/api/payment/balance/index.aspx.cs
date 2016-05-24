@@ -23,7 +23,7 @@ namespace DTcms.Web.api.payment.balance
             }
             decimal order_amount = modelorders.order_amount;
             string subject = DTRequest.GetFormString("pay_subject");
-            if (order_no == "" || order_amount == 0 )
+            if (order_no == "" || order_amount == 0)
             {
                 Response.Redirect(new Web.UI.BasePage().linkurl("error", "?msg=" + Utils.UrlEncode("对不起，您提交的参数有误！")));
                 return;
@@ -57,7 +57,7 @@ namespace DTcms.Web.api.payment.balance
                     if (result > 0)
                     {
                         //更改订单状态
-                        bool result1 = bll.UpdateField(order_no, "status=2,payment_status=2,payment_time='" + DateTime.Now + "'");
+                        bool result1 = bll.UpdatePaied(order_no, "status=2,payment_status=2,payment_time='" + DateTime.Now + "'");
                         if (!result1)
                         {
                             Response.Redirect(new Web.UI.BasePage().linkurl("payment", "?action=error"));

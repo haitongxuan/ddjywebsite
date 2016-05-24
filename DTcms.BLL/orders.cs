@@ -1,7 +1,10 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text;
 using DTcms.Common;
+using DTcms.DBUtility;
 
 namespace DTcms.BLL
 {
@@ -117,6 +120,93 @@ namespace DTcms.BLL
         public bool UpdateField(string order_no, string strValue)
         {
             return dal.UpdateField(order_no, strValue);
+        }
+
+
+        public bool UpdatePaied(string order_no, string strValue)
+        {
+            using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
+            {
+                conn.Open();
+                using (SqlTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        StringBuilder strSql1 = new StringBuilder();
+                        strSql1.Append("update " + siteConfig.sysdatabaseprefix + "orders set " + strValue);
+                        strSql1.Append(" where order_no='@orderno';");
+                        SqlParameter[] parameters1 =
+                        {
+                            new SqlParameter("@orderno", SqlDbType.NVarChar, 50)
+                        };
+                        parameters1[0].Value = order_no;
+                        DbHelperSQL.GetSingle(conn, trans, strSql1.ToString(), parameters1); //带事务
+
+                        var model = GetModel(order_no);
+                        foreach (var g in model.order_goods)
+                        {
+                            var abll = new article();
+                            if (abll.IsCard(g.article_id))
+                            {
+                                StringBuilder strSql = new StringBuilder();
+                                var article = abll.GetModel(g.article_id);
+                                var user = new users().GetModel(model.user_name);
+                                string callindex = article.fields["cardcategorycallindex"];
+                                var cardcategory = new BLL.CardCategory().GetModel(callindex);
+                                strSql.Append("insert into " + siteConfig.edudatabaseprefix + "Card(");
+                                strSql.Append("CardCategoryId,Code,CreateDate,StartDate,EndDate");
+                                strSql.Append(") values (");
+                                strSql.Append("@CardCategoryId,@Code,@CreateDate,@StartDate,@EndDate");
+                                strSql.Append(") ");
+                                strSql.Append(";select @@IDENTITY");
+                                SqlParameter[] parameters =
+                                {
+                                    new SqlParameter("@CardCategoryId", SqlDbType.Int, 4),
+                                    new SqlParameter("@Code", SqlDbType.VarChar, 50),
+                                    new SqlParameter("@CreateDate", SqlDbType.DateTime),
+                                    new SqlParameter("@StartDate", SqlDbType.DateTime),
+                                    new SqlParameter("@EndDate", SqlDbType.DateTime)
+
+                                };
+
+                                parameters[0].Value = cardcategory.CardCategoryId;
+                                parameters[1].Value = Utils.GetCheckCode(7);;
+                                parameters[2].Value = DateTime.Now;
+                                parameters[3].Value = DateTime.Now;
+                                parameters[4].Value = DateTime.Now.AddDays((double)cardcategory.Duration);
+                                object obj = DbHelperSQL.GetSingle(conn, trans, strSql.ToString(), parameters); //带事务
+                                int id = Convert.ToInt32(obj);
+                                StringBuilder strSqlUC = new StringBuilder();
+                                strSqlUC.Append("insert into " + siteConfig.edudatabaseprefix + "UserCard(");
+                                strSqlUC.Append("CardId,UserId,CardCategoryId");
+                                strSqlUC.Append(") values (");
+                                strSqlUC.Append("@CardId,@UserId,@CardCategoryId");
+                                strSqlUC.Append(") ");
+                                strSqlUC.Append(";select @@IDENTITY");
+                                SqlParameter[] parametersUC =
+                                {
+                                    new SqlParameter("@CardId", SqlDbType.Int, 4),
+                                    new SqlParameter("@UserId", SqlDbType.Int, 4),
+                                    new SqlParameter("@CardCategoryId", SqlDbType.Int, 4)
+                                };
+
+                                parametersUC[0].Value = id;
+                                parametersUC[1].Value = model.user_id;
+                                parametersUC[2].Value = cardcategory.CardCategoryId;
+
+                                DbHelperSQL.GetSingle(conn, trans, strSqlUC.ToString(), parametersUC);
+                            }
+                        }
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
         #endregion
     }

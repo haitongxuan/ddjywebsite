@@ -183,12 +183,14 @@ namespace DTcms.BLL
             var model = dal.GetModel(id);
             if (model.fields.ContainsKey("iscard"))
             {
-                bool iscard = Convert.ToInt32(model.fields["iscard"]) == 1;
+                bool iscard = false;
+                if (!string.IsNullOrEmpty(model.fields["iscard"]))
+                    iscard = Convert.ToInt32(model.fields["iscard"]) == 1;
                 return iscard;
             }
             return false;
         }
-        
+
         #endregion
 
         #region 前台模板调用方法========================

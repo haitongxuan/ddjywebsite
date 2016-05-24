@@ -29,7 +29,7 @@ namespace DTcms.DAL
             strSql.Append("select count(1) from " + databaseprefix + "orders");
             strSql.Append(" where id=@id ");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
@@ -44,7 +44,7 @@ namespace DTcms.DAL
             strSql.Append("select count(1) from " + databaseprefix + "orders");
             strSql.Append(" where order_no=@order_no ");
             SqlParameter[] parameters = {
-					new SqlParameter("@order_no", SqlDbType.NVarChar,100)};
+                    new SqlParameter("@order_no", SqlDbType.NVarChar,100)};
             parameters[0].Value = order_no;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
@@ -62,39 +62,39 @@ namespace DTcms.DAL
             strSql.Append("@order_no,@trade_no,@user_id,@user_name,@payment_id,@payment_fee,@payment_status,@payment_time,@express_id,@express_no,@express_fee,@express_status,@express_time,@accept_name,@post_code,@telphone,@mobile,@email,@area,@address,@message,@remark,@is_invoice,@invoice_title,@invoice_taxes,@payable_amount,@real_amount,@order_amount,@point,@status,@add_time,@confirm_time,@complete_time)");
             strSql.Append(";set @ReturnValue= @@IDENTITY");
             SqlParameter[] parameters = {
-					new SqlParameter("@order_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@trade_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@user_id", SqlDbType.Int,4),
-					new SqlParameter("@user_name", SqlDbType.NVarChar,100),
-					new SqlParameter("@payment_id", SqlDbType.Int,4),
-					new SqlParameter("@payment_fee", SqlDbType.Decimal,5),
-					new SqlParameter("@payment_status", SqlDbType.TinyInt,1),
-					new SqlParameter("@payment_time", SqlDbType.DateTime),
-					new SqlParameter("@express_id", SqlDbType.Int,4),
-					new SqlParameter("@express_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@express_fee", SqlDbType.Decimal,5),
-					new SqlParameter("@express_status", SqlDbType.TinyInt,1),
-					new SqlParameter("@express_time", SqlDbType.DateTime),
-					new SqlParameter("@accept_name", SqlDbType.NVarChar,50),
-					new SqlParameter("@post_code", SqlDbType.NVarChar,20),
-					new SqlParameter("@telphone", SqlDbType.NVarChar,30),
-					new SqlParameter("@mobile", SqlDbType.NVarChar,20),
+                    new SqlParameter("@order_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@trade_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@user_id", SqlDbType.Int,4),
+                    new SqlParameter("@user_name", SqlDbType.NVarChar,100),
+                    new SqlParameter("@payment_id", SqlDbType.Int,4),
+                    new SqlParameter("@payment_fee", SqlDbType.Decimal,5),
+                    new SqlParameter("@payment_status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@payment_time", SqlDbType.DateTime),
+                    new SqlParameter("@express_id", SqlDbType.Int,4),
+                    new SqlParameter("@express_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@express_fee", SqlDbType.Decimal,5),
+                    new SqlParameter("@express_status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@express_time", SqlDbType.DateTime),
+                    new SqlParameter("@accept_name", SqlDbType.NVarChar,50),
+                    new SqlParameter("@post_code", SqlDbType.NVarChar,20),
+                    new SqlParameter("@telphone", SqlDbType.NVarChar,30),
+                    new SqlParameter("@mobile", SqlDbType.NVarChar,20),
                     new SqlParameter("@email", SqlDbType.NVarChar,30),
-					new SqlParameter("@area", SqlDbType.NVarChar,100),
-					new SqlParameter("@address", SqlDbType.NVarChar,500),
-					new SqlParameter("@message", SqlDbType.NVarChar,500),
-					new SqlParameter("@remark", SqlDbType.NVarChar,500),
-					new SqlParameter("@is_invoice", SqlDbType.TinyInt,1),
-					new SqlParameter("@invoice_title", SqlDbType.VarChar,100),
-					new SqlParameter("@invoice_taxes", SqlDbType.Decimal,5),
-					new SqlParameter("@payable_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@real_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@order_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@point", SqlDbType.Int,4),
-					new SqlParameter("@status", SqlDbType.TinyInt,1),
-					new SqlParameter("@add_time", SqlDbType.DateTime),
-					new SqlParameter("@confirm_time", SqlDbType.DateTime),
-					new SqlParameter("@complete_time", SqlDbType.DateTime),
+                    new SqlParameter("@area", SqlDbType.NVarChar,100),
+                    new SqlParameter("@address", SqlDbType.NVarChar,500),
+                    new SqlParameter("@message", SqlDbType.NVarChar,500),
+                    new SqlParameter("@remark", SqlDbType.NVarChar,500),
+                    new SqlParameter("@is_invoice", SqlDbType.TinyInt,1),
+                    new SqlParameter("@invoice_title", SqlDbType.VarChar,100),
+                    new SqlParameter("@invoice_taxes", SqlDbType.Decimal,5),
+                    new SqlParameter("@payable_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@real_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@order_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@point", SqlDbType.Int,4),
+                    new SqlParameter("@status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@add_time", SqlDbType.DateTime),
+                    new SqlParameter("@confirm_time", SqlDbType.DateTime),
+                    new SqlParameter("@complete_time", SqlDbType.DateTime),
                     new SqlParameter("@ReturnValue",SqlDbType.Int)};
             parameters[0].Value = model.order_no;
             parameters[1].Value = model.trade_no;
@@ -146,17 +146,17 @@ namespace DTcms.DAL
                     strSql2.Append(" values (");
                     strSql2.Append("@article_id,@order_id,@goods_id,@goods_no,@goods_title,@img_url,@spec_text,@goods_price,@real_price,@quantity,@point)");
                     SqlParameter[] parameters2 = {
-					        new SqlParameter("@article_id", SqlDbType.Int,4),
-					        new SqlParameter("@order_id", SqlDbType.Int,4),
-					        new SqlParameter("@goods_id", SqlDbType.Int,4),
+                            new SqlParameter("@article_id", SqlDbType.Int,4),
+                            new SqlParameter("@order_id", SqlDbType.Int,4),
+                            new SqlParameter("@goods_id", SqlDbType.Int,4),
                             new SqlParameter("@goods_no", SqlDbType.NVarChar,50),
-					        new SqlParameter("@goods_title", SqlDbType.NVarChar,100),
-					        new SqlParameter("@img_url", SqlDbType.NVarChar,255),
-					        new SqlParameter("@spec_text", SqlDbType.Text),
-					        new SqlParameter("@goods_price", SqlDbType.Decimal,5),
-					        new SqlParameter("@real_price", SqlDbType.Decimal,5),
-					        new SqlParameter("@quantity", SqlDbType.Int,4),
-					        new SqlParameter("@point", SqlDbType.Int,4)};
+                            new SqlParameter("@goods_title", SqlDbType.NVarChar,100),
+                            new SqlParameter("@img_url", SqlDbType.NVarChar,255),
+                            new SqlParameter("@spec_text", SqlDbType.Text),
+                            new SqlParameter("@goods_price", SqlDbType.Decimal,5),
+                            new SqlParameter("@real_price", SqlDbType.Decimal,5),
+                            new SqlParameter("@quantity", SqlDbType.Int,4),
+                            new SqlParameter("@point", SqlDbType.Int,4)};
                     parameters2[0].Value = modelt.article_id;
                     parameters2[1].Direction = ParameterDirection.InputOutput;
                     parameters2[2].Value = modelt.goods_id;
@@ -218,39 +218,39 @@ namespace DTcms.DAL
             strSql.Append("complete_time=@complete_time");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@order_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@trade_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@user_id", SqlDbType.Int,4),
-					new SqlParameter("@user_name", SqlDbType.NVarChar,100),
-					new SqlParameter("@payment_id", SqlDbType.Int,4),
-					new SqlParameter("@payment_fee", SqlDbType.Decimal,5),
-					new SqlParameter("@payment_status", SqlDbType.TinyInt,1),
-					new SqlParameter("@payment_time", SqlDbType.DateTime),
-					new SqlParameter("@express_id", SqlDbType.Int,4),
-					new SqlParameter("@express_no", SqlDbType.NVarChar,100),
-					new SqlParameter("@express_fee", SqlDbType.Decimal,5),
-					new SqlParameter("@express_status", SqlDbType.TinyInt,1),
-					new SqlParameter("@express_time", SqlDbType.DateTime),
-					new SqlParameter("@accept_name", SqlDbType.NVarChar,50),
-					new SqlParameter("@post_code", SqlDbType.NVarChar,20),
-					new SqlParameter("@telphone", SqlDbType.NVarChar,30),
-					new SqlParameter("@mobile", SqlDbType.NVarChar,20),
+                    new SqlParameter("@order_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@trade_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@user_id", SqlDbType.Int,4),
+                    new SqlParameter("@user_name", SqlDbType.NVarChar,100),
+                    new SqlParameter("@payment_id", SqlDbType.Int,4),
+                    new SqlParameter("@payment_fee", SqlDbType.Decimal,5),
+                    new SqlParameter("@payment_status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@payment_time", SqlDbType.DateTime),
+                    new SqlParameter("@express_id", SqlDbType.Int,4),
+                    new SqlParameter("@express_no", SqlDbType.NVarChar,100),
+                    new SqlParameter("@express_fee", SqlDbType.Decimal,5),
+                    new SqlParameter("@express_status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@express_time", SqlDbType.DateTime),
+                    new SqlParameter("@accept_name", SqlDbType.NVarChar,50),
+                    new SqlParameter("@post_code", SqlDbType.NVarChar,20),
+                    new SqlParameter("@telphone", SqlDbType.NVarChar,30),
+                    new SqlParameter("@mobile", SqlDbType.NVarChar,20),
                     new SqlParameter("@email", SqlDbType.NVarChar,30),
-					new SqlParameter("@area", SqlDbType.NVarChar,100),
-					new SqlParameter("@address", SqlDbType.NVarChar,500),
-					new SqlParameter("@message", SqlDbType.NVarChar,500),
-					new SqlParameter("@remark", SqlDbType.NVarChar,500),
-					new SqlParameter("@is_invoice", SqlDbType.TinyInt,1),
-					new SqlParameter("@invoice_title", SqlDbType.VarChar,100),
-					new SqlParameter("@invoice_taxes", SqlDbType.Decimal,5),
-					new SqlParameter("@payable_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@real_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@order_amount", SqlDbType.Decimal,5),
-					new SqlParameter("@point", SqlDbType.Int,4),
-					new SqlParameter("@status", SqlDbType.TinyInt,1),
-					new SqlParameter("@add_time", SqlDbType.DateTime),
-					new SqlParameter("@confirm_time", SqlDbType.DateTime),
-					new SqlParameter("@complete_time", SqlDbType.DateTime),
+                    new SqlParameter("@area", SqlDbType.NVarChar,100),
+                    new SqlParameter("@address", SqlDbType.NVarChar,500),
+                    new SqlParameter("@message", SqlDbType.NVarChar,500),
+                    new SqlParameter("@remark", SqlDbType.NVarChar,500),
+                    new SqlParameter("@is_invoice", SqlDbType.TinyInt,1),
+                    new SqlParameter("@invoice_title", SqlDbType.VarChar,100),
+                    new SqlParameter("@invoice_taxes", SqlDbType.Decimal,5),
+                    new SqlParameter("@payable_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@real_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@order_amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@point", SqlDbType.Int,4),
+                    new SqlParameter("@status", SqlDbType.TinyInt,1),
+                    new SqlParameter("@add_time", SqlDbType.DateTime),
+                    new SqlParameter("@confirm_time", SqlDbType.DateTime),
+                    new SqlParameter("@complete_time", SqlDbType.DateTime),
                     new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = model.order_no;
             parameters[1].Value = model.trade_no;
@@ -308,7 +308,7 @@ namespace DTcms.DAL
             strSql2.Append("delete from " + databaseprefix + "order_goods ");
             strSql2.Append(" where order_id=@order_id ");
             SqlParameter[] parameters2 = {
-					new SqlParameter("@order_id", SqlDbType.Int,4)};
+                    new SqlParameter("@order_id", SqlDbType.Int,4)};
             parameters2[0].Value = id;
             CommandInfo cmd = new CommandInfo(strSql2.ToString(), parameters2);
             sqllist.Add(cmd);
@@ -317,7 +317,7 @@ namespace DTcms.DAL
             strSql.Append("delete from " + databaseprefix + "orders ");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
             cmd = new CommandInfo(strSql.ToString(), parameters);
             sqllist.Add(cmd);
@@ -343,7 +343,7 @@ namespace DTcms.DAL
             strSql.Append(" from " + databaseprefix + "orders");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
 
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
@@ -367,7 +367,7 @@ namespace DTcms.DAL
             strSql.Append(" from " + databaseprefix + "orders");
             strSql.Append(" where order_no=@order_no");
             SqlParameter[] parameters = {
-					new SqlParameter("@order_no", SqlDbType.NVarChar,100)};
+                    new SqlParameter("@order_no", SqlDbType.NVarChar,100)};
             parameters[0].Value = order_no;
 
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
@@ -617,7 +617,7 @@ namespace DTcms.DAL
                 strSql2.Append(" from " + databaseprefix + "order_goods ");
                 strSql2.Append(" where order_id=@id ");
                 SqlParameter[] parameters2 = {
-					    new SqlParameter("@id", SqlDbType.Int,4)};
+                        new SqlParameter("@id", SqlDbType.Int,4)};
                 parameters2[0].Value = model.id;
                 DataSet ds2 = DbHelperSQL.Query(strSql2.ToString(), parameters2);
 

@@ -90,3 +90,17 @@ E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReferenc
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.dll
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Debug\DTcms.Model.xml
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.Common.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.Model.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.Model.xml
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Debug\DTcms.BLL.pdb

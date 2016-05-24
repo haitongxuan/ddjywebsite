@@ -287,7 +287,7 @@ namespace DTcms.DAL
             strSql.Append("  from " + databaseprefix + "CardCategory ");
             strSql.Append(" where CallIndex=@CallIndex");
             SqlParameter[] parameters = {
-                    new SqlParameter("@CallIndex", SqlDbType.Int,4)
+                    new SqlParameter("@CallIndex", SqlDbType.NVarChar,50)
             };
             parameters[0].Value = CallIndex;
 
