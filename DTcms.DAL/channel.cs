@@ -8,11 +8,11 @@ using DTcms.Common;
 
 namespace DTcms.DAL
 {
-	/// <summary>
-	/// 数据访问类:频道
-	/// </summary>
-	public partial class channel
-	{
+    /// <summary>
+    /// 数据访问类:频道
+    /// </summary>
+    public partial class channel
+    {
         private string databaseprefix; //数据库表名前缀
         public channel(string _databaseprefix)
         {
@@ -24,16 +24,16 @@ namespace DTcms.DAL
 		/// 是否存在该记录
 		/// </summary>
 		public bool Exists(int id)
-		{
-			StringBuilder strSql=new StringBuilder();
+        {
+            StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from " + databaseprefix + "channel");
-			strSql.Append(" where id=@id ");
-			SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
-			parameters[0].Value = id;
+            strSql.Append(" where id=@id ");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@id", SqlDbType.Int,4)};
+            parameters[0].Value = id;
 
-			return DbHelperSQL.Exists(strSql.ToString(),parameters);
-		}
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 
         /// <summary>
         /// 查询是否存在该记录
@@ -44,7 +44,7 @@ namespace DTcms.DAL
             strSql.Append("select count(1) from " + databaseprefix + "channel");
             strSql.Append(" where name=@name ");
             SqlParameter[] parameters = {
-					new SqlParameter("@name", SqlDbType.VarChar,50)};
+                    new SqlParameter("@name", SqlDbType.VarChar,50)};
             parameters[0].Value = name;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
@@ -65,11 +65,11 @@ namespace DTcms.DAL
             return Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString()));
         }
 
-		/// <summary>
+        /// <summary>
         /// 增加一条数据及其子表
-		/// </summary>
-		public int Add(Model.channel model)
-		{
+        /// </summary>
+        public int Add(Model.channel model)
+        {
             //取得站点对应的导航ID
             int parent_id = new DAL.channel_site(databaseprefix).GetSiteNavId(model.site_id);
             if (parent_id == 0)
@@ -83,27 +83,31 @@ namespace DTcms.DAL
                 {
                     try
                     {
-			            StringBuilder strSql=new StringBuilder();
+                        StringBuilder strSql = new StringBuilder();
                         strSql.Append("insert into " + databaseprefix + "channel(");
-			            strSql.Append("site_id,name,title,is_albums,is_attach,is_spec,sort_id)");
-			            strSql.Append(" values (");
-			            strSql.Append("@site_id,@name,@title,@is_albums,@is_attach,@is_spec,@sort_id)");
+                        strSql.Append("site_id,name,title,is_albums,is_attach,is_spec,sort_id,is_items,item_channel_id)");
+                        strSql.Append(" values (");
+                        strSql.Append("@site_id,@name,@title,@is_albums,@is_attach,@is_spec,@sort_id,@is_items,@item_channel_id)");
                         strSql.Append(";select @@IDENTITY");
-			            SqlParameter[] parameters = {
-					            new SqlParameter("@site_id", SqlDbType.Int,4),
-					            new SqlParameter("@name", SqlDbType.VarChar,50),
-					            new SqlParameter("@title", SqlDbType.VarChar,100),
-					            new SqlParameter("@is_albums", SqlDbType.TinyInt,1),
-					            new SqlParameter("@is_attach", SqlDbType.TinyInt,1),
-					            new SqlParameter("@is_spec", SqlDbType.TinyInt,1),
-					            new SqlParameter("@sort_id", SqlDbType.Int,4)};
-			            parameters[0].Value = model.site_id;
-			            parameters[1].Value = model.name;
-			            parameters[2].Value = model.title;
-			            parameters[3].Value = model.is_albums;
-			            parameters[4].Value = model.is_attach;
-			            parameters[5].Value = model.is_spec;
-			            parameters[6].Value = model.sort_id;
+                        SqlParameter[] parameters = {
+                                new SqlParameter("@site_id", SqlDbType.Int,4),
+                                new SqlParameter("@name", SqlDbType.VarChar,50),
+                                new SqlParameter("@title", SqlDbType.VarChar,100),
+                                new SqlParameter("@is_albums", SqlDbType.TinyInt,1),
+                                new SqlParameter("@is_attach", SqlDbType.TinyInt,1),
+                                new SqlParameter("@is_spec", SqlDbType.TinyInt,1),
+                                new SqlParameter("@sort_id", SqlDbType.Int,4),
+                                new SqlParameter("@is_items",SqlDbType.TinyInt,1),
+                                new SqlParameter("@item_channel_id",SqlDbType.Int,4), };
+                        parameters[0].Value = model.site_id;
+                        parameters[1].Value = model.name;
+                        parameters[2].Value = model.title;
+                        parameters[3].Value = model.is_albums;
+                        parameters[4].Value = model.is_attach;
+                        parameters[5].Value = model.is_spec;
+                        parameters[6].Value = model.sort_id;
+                        parameters[7].Value = model.is_items;
+                        parameters[8].Value = model.item_channel_id;
                         object obj = DbHelperSQL.GetSingle(conn, trans, strSql.ToString(), parameters); //带事务
                         model.id = Convert.ToInt32(obj);
 
@@ -119,8 +123,8 @@ namespace DTcms.DAL
                                 strSql2.Append(" values (");
                                 strSql2.Append("@channel_id,@field_id)");
                                 SqlParameter[] parameters2 = {
-					                    new SqlParameter("@channel_id", SqlDbType.Int,4),
-					                    new SqlParameter("@field_id", SqlDbType.Int,4)};
+                                        new SqlParameter("@channel_id", SqlDbType.Int,4),
+                                        new SqlParameter("@field_id", SqlDbType.Int,4)};
                                 parameters2[0].Value = model.id;
                                 parameters2[1].Value = modelt.field_id;
                                 DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
@@ -163,13 +167,13 @@ namespace DTcms.DAL
                 }
             }
             return model.id;
-		}
+        }
 
-		/// <summary>
-		/// 更新一条数据
-		/// </summary>
-		public bool Update(Model.channel model)
-		{
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(Model.channel model)
+        {
             Model.channel oldModel = GetModel(model.id); //旧的数据
             //取得站点对应的导航ID
             int parent_id = new DAL.channel_site(databaseprefix).GetSiteNavId(model.site_id);
@@ -184,33 +188,39 @@ namespace DTcms.DAL
                 {
                     try
                     {
-			            StringBuilder strSql=new StringBuilder();
-			            strSql.Append("update " + databaseprefix + "channel set ");
-			            strSql.Append("site_id=@site_id,");
-			            strSql.Append("name=@name,");
-			            strSql.Append("title=@title,");
-			            strSql.Append("is_albums=@is_albums,");
-			            strSql.Append("is_attach=@is_attach,");
-			            strSql.Append("is_spec=@is_spec,");
-			            strSql.Append("sort_id=@sort_id");
-			            strSql.Append(" where id=@id ");
-			            SqlParameter[] parameters = {
-					            new SqlParameter("@site_id", SqlDbType.Int,4),
-					            new SqlParameter("@name", SqlDbType.VarChar,50),
-					            new SqlParameter("@title", SqlDbType.VarChar,100),
-					            new SqlParameter("@is_albums", SqlDbType.TinyInt,1),
-					            new SqlParameter("@is_attach", SqlDbType.TinyInt,1),
-					            new SqlParameter("@is_spec", SqlDbType.TinyInt,1),
-					            new SqlParameter("@sort_id", SqlDbType.Int,4),
-					            new SqlParameter("@id", SqlDbType.Int,4)};
-			            parameters[0].Value = model.site_id;
-			            parameters[1].Value = model.name;
-			            parameters[2].Value = model.title;
-			            parameters[3].Value = model.is_albums;
-			            parameters[4].Value = model.is_attach;
-			            parameters[5].Value = model.is_spec;
-			            parameters[6].Value = model.sort_id;
-			            parameters[7].Value = model.id;
+                        StringBuilder strSql = new StringBuilder();
+                        strSql.Append("update " + databaseprefix + "channel set ");
+                        strSql.Append("site_id=@site_id,");
+                        strSql.Append("name=@name,");
+                        strSql.Append("title=@title,");
+                        strSql.Append("is_albums=@is_albums,");
+                        strSql.Append("is_attach=@is_attach,");
+                        strSql.Append("is_spec=@is_spec,");
+                        strSql.Append("sort_id=@sort_id,");
+                        strSql.Append("is_items=@is_items,");
+                        strSql.Append("item_channel_id=@item_channel_id");
+                        strSql.Append(" where id=@id ");
+                        SqlParameter[] parameters = {
+                                new SqlParameter("@site_id", SqlDbType.Int,4),
+                                new SqlParameter("@name", SqlDbType.VarChar,50),
+                                new SqlParameter("@title", SqlDbType.VarChar,100),
+                                new SqlParameter("@is_albums", SqlDbType.TinyInt,1),
+                                new SqlParameter("@is_attach", SqlDbType.TinyInt,1),
+                                new SqlParameter("@is_spec", SqlDbType.TinyInt,1),
+                                new SqlParameter("@sort_id", SqlDbType.Int,4),
+                                new SqlParameter("@is_items",SqlDbType.TinyInt,1),
+                                new SqlParameter("@item_channel_id",SqlDbType.Int,4),
+                                new SqlParameter("@id", SqlDbType.Int,4)};
+                        parameters[0].Value = model.site_id;
+                        parameters[1].Value = model.name;
+                        parameters[2].Value = model.title;
+                        parameters[3].Value = model.is_albums;
+                        parameters[4].Value = model.is_attach;
+                        parameters[5].Value = model.is_spec;
+                        parameters[6].Value = model.sort_id;
+                        parameters[7].Value = model.is_items;
+                        parameters[8].Value = model.item_channel_id;
+                        parameters[9].Value = model.id;
                         DbHelperSQL.ExecuteSql(conn, trans, strSql.ToString(), parameters);
 
                         //删除已移除的扩展字段
@@ -234,8 +244,8 @@ namespace DTcms.DAL
                                     strSql2.Append(" values (");
                                     strSql2.Append("@channel_id,@field_id)");
                                     SqlParameter[] parameters2 = {
-					                        new SqlParameter("@channel_id", SqlDbType.Int,4),
-					                        new SqlParameter("@field_id", SqlDbType.Int,4)};
+                                            new SqlParameter("@channel_id", SqlDbType.Int,4),
+                                            new SqlParameter("@field_id", SqlDbType.Int,4)};
                                     parameters2[0].Value = modelt.channel_id;
                                     parameters2[1].Value = modelt.field_id;
                                     DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
@@ -261,13 +271,13 @@ namespace DTcms.DAL
                 }
             }
             return true;
-		}
+        }
 
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		public bool Delete(int id)
-		{
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete(int id)
+        {
             //取得频道的名称
             string channel_name = GetChannelName(id);
             if (string.IsNullOrEmpty(channel_name))
@@ -301,7 +311,7 @@ namespace DTcms.DAL
                         strSql2.Append("delete from " + databaseprefix + "channel_field ");
                         strSql2.Append(" where channel_id=@channel_id ");
                         SqlParameter[] parameters2 = {
-					            new SqlParameter("@channel_id", SqlDbType.Int,4)};
+                                new SqlParameter("@channel_id", SqlDbType.Int,4)};
                         parameters2[0].Value = id;
                         DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
 
@@ -310,7 +320,7 @@ namespace DTcms.DAL
                         strSql3.Append("delete from " + databaseprefix + "channel ");
                         strSql3.Append(" where id=@id ");
                         SqlParameter[] parameters3 = {
-					            new SqlParameter("@id", SqlDbType.Int,4)};
+                                new SqlParameter("@id", SqlDbType.Int,4)};
                         parameters3[0].Value = id;
                         DbHelperSQL.ExecuteSql(conn, trans, strSql3.ToString(), parameters3);
 
@@ -324,18 +334,18 @@ namespace DTcms.DAL
                 }
             }
             return true;
-		}
-		
-		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
+        }
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
         public Model.channel GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id from " + databaseprefix + "channel ");
+            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id,is_items,item_channel_id from " + databaseprefix + "channel ");
             strSql.Append(" where id=@id ");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
 
             Model.channel model = new Model.channel();
@@ -356,10 +366,10 @@ namespace DTcms.DAL
         public Model.channel GetModel(string channel_name)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id from " + databaseprefix + "channel ");
+            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id,is_items,item_channel_id from " + databaseprefix + "channel ");
             strSql.Append(" where name=@channel_name ");
             SqlParameter[] parameters = {
-					new SqlParameter("@channel_name", SqlDbType.VarChar,50)};
+                    new SqlParameter("@channel_name", SqlDbType.VarChar,50)};
             parameters[0].Value = channel_name;
 
             Model.channel model = new Model.channel();
@@ -374,26 +384,26 @@ namespace DTcms.DAL
             }
         }
 
-		/// <summary>
-		/// 获得前几行数据
-		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select ");
-			if(Top>0)
-			{
-				strSql.Append(" top "+Top.ToString());
-			}
-			strSql.Append(" id,site_id,name,title,is_albums,is_attach,is_spec,sort_id ");
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataSet GetList(int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" id,site_id,name,title,is_albums,is_attach,is_spec,sort_id，is_items,item_channel_id ");
             strSql.Append(" FROM " + databaseprefix + "channel ");
-			if(strWhere.Trim()!="")
-			{
-				strSql.Append(" where "+strWhere);
-			}
-			strSql.Append(" order by " + filedOrder);
-			return DbHelperSQL.Query(strSql.ToString());
-		}
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            strSql.Append(" order by " + filedOrder);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
 
         /// <summary>
         /// 获得查询分页数据
@@ -409,7 +419,7 @@ namespace DTcms.DAL
             recordCount = Convert.ToInt32(DbHelperSQL.GetSingle(PagingHelper.CreateCountingSql(strSql.ToString())));
             return DbHelperSQL.Query(PagingHelper.CreatePagingSql(recordCount, pageSize, pageIndex, strSql.ToString(), filedOrder));
         }
-		#endregion
+        #endregion
 
         #region 扩展方法================================
         /// <summary>
@@ -453,6 +463,14 @@ namespace DTcms.DAL
                 {
                     model.sort_id = int.Parse(row["sort_id"].ToString());
                 }
+                if (row["is_items"] != null && row["is_items"].ToString() != "")
+                {
+                    model.is_items = int.Parse(row["is_items"].ToString());
+                }
+                if (row["item_channel_id"] != null && row["item_channel_id"].ToString() != "")
+                {
+                    model.item_channel_id = int.Parse(row["item_channel_id"].ToString());
+                }
                 #endregion
 
                 #region 子表信息======================
@@ -460,7 +478,7 @@ namespace DTcms.DAL
                 strSql2.Append("select id,channel_id,field_id from " + databaseprefix + "channel_field ");
                 strSql2.Append(" where channel_id=@channel_id ");
                 SqlParameter[] parameters2 = {
-					    new SqlParameter("@channel_id", SqlDbType.Int,4)};
+                        new SqlParameter("@channel_id", SqlDbType.Int,4)};
                 parameters2[0].Value = model.id;
                 DataSet ds2 = DbHelperSQL.Query(strSql2.ToString(), parameters2);
 
@@ -534,6 +552,14 @@ namespace DTcms.DAL
                 {
                     model.sort_id = int.Parse(row["sort_id"].ToString());
                 }
+                if (row["is_items"] != null && row["is_items"].ToString() != "")
+                {
+                    model.is_items = int.Parse(row["is_items"].ToString());
+                }
+                if (row["item_channel_id"] != null && row["item_channel_id"].ToString() != "")
+                {
+                    model.item_channel_id = int.Parse(row["item_channel_id"].ToString());
+                }
                 #endregion
 
                 #region 子表信息======================
@@ -541,7 +567,7 @@ namespace DTcms.DAL
                 strSql2.Append("select top 1 id,channel_id,field_id from " + databaseprefix + "channel_field ");
                 strSql2.Append(" where channel_id=@channel_id ");
                 SqlParameter[] parameters2 = {
-					    new SqlParameter("@channel_id", SqlDbType.Int,4)};
+                        new SqlParameter("@channel_id", SqlDbType.Int,4)};
                 parameters2[0].Value = model.id;
                 DataSet ds2 = DbHelperSQL.Query(conn, trans, strSql2.ToString(), parameters2);
 
@@ -580,10 +606,10 @@ namespace DTcms.DAL
         public Model.channel GetModel(SqlConnection conn, SqlTransaction trans, int id)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id from " + databaseprefix + "channel ");
+            strSql.Append("select top 1 id,site_id,name,title,is_albums,is_attach,is_spec,sort_id,is_items,item_channel_id from " + databaseprefix + "channel ");
             strSql.Append(" where id=@id ");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
 
             Model.channel model = new Model.channel();
@@ -634,7 +660,7 @@ namespace DTcms.DAL
             strSql.Append("select top 1 id from " + databaseprefix + "channel");
             strSql.Append(" where name=@name ");
             SqlParameter[] parameters = {
-					new SqlParameter("@name", SqlDbType.VarChar,50)};
+                    new SqlParameter("@name", SqlDbType.VarChar,50)};
             parameters[0].Value = name;
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj != null)

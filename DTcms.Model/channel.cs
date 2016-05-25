@@ -20,6 +20,8 @@ namespace DTcms.Model
         private int _is_attach = 0;
         private int _is_spec = 0;
         private int _sort_id = 99;
+        private int _is_items = 0;
+        private int _item_channel_id = 0;
         /// <summary>
         /// 自增ID
         /// </summary>
@@ -93,6 +95,23 @@ namespace DTcms.Model
         {
             set { _channel_fields = value; }
             get { return _channel_fields; }
+        }
+
+        /// <summary>
+		/// 是否有明细
+        /// </summary>		
+        public int is_items
+        {
+            get { return _is_items; }
+            set { _is_items = value; }
+        }
+        /// <summary>
+        /// 明细频道主键
+        /// </summary>		
+        public int item_channel_id
+        {
+            get { return _item_channel_id; }
+            set { _item_channel_id = value; }
         }
         #endregion Model
 
