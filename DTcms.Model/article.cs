@@ -287,6 +287,17 @@ namespace DTcms.Model
             set { _specs = value; }
             get { return _specs; }
         }
+
+        private List<article_item> _article_items;
+        /// <summary>
+        /// 文章明细
+        /// </summary>
+        public List<article_item> article_items
+        {
+            set { _article_items = value; }
+            get { return _article_items; }
+        }
+
         #endregion Model
 
     }

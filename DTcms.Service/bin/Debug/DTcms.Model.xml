@@ -159,6 +159,11 @@
             商品规格
             </summary>
         </member>
+        <member name="P:DTcms.Model.article.article_items">
+            <summary>
+            文章明细
+            </summary>
+        </member>
         <member name="T:DTcms.Model.article_albums">
             <summary>
             图片相册
@@ -614,6 +619,46 @@
             规格图片
             </summary>
         </member>
+        <member name="F:DTcms.Model.article_item._id">
+            <summary>
+            id
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._article_id">
+            <summary>
+            文章主键
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._item_article_id">
+            <summary>
+            文章明细主键
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._channel_id">
+            <summary>
+            频道主键
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._item_channel_id">
+            <summary>
+            明细频道主键
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._sort_id">
+            <summary>
+            排序编号
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._item_title">
+            <summary>
+            明细标题
+            </summary>		
+        </member>
+        <member name="F:DTcms.Model.article_item._item_img_url">
+            <summary>
+            明细图片链接
+            </summary>		
+        </member>
         <member name="T:DTcms.Model.article_spec">
             <summary>
             商品规格
@@ -993,6 +1038,16 @@
             <summary>
             扩展字段 
             </summary>
+        </member>
+        <member name="P:DTcms.Model.channel.is_items">
+            <summary>
+            是否有明细
+            </summary>		
+        </member>
+        <member name="P:DTcms.Model.channel.item_channel_id">
+            <summary>
+            明细频道主键
+            </summary>		
         </member>
         <member name="T:DTcms.Model.channel_field">
             <summary>

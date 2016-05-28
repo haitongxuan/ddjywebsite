@@ -56,6 +56,7 @@
     <Compile Include="article_comment.cs" />
     <Compile Include="article_goods.cs" />
     <Compile Include="article_goods_spec.cs" />
+    <Compile Include="article_item.cs" />
     <Compile Include="article_spec.cs" />
     <Compile Include="article_tags.cs" />
     <Compile Include="board.cs" />

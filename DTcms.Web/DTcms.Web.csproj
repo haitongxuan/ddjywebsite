@@ -117,6 +117,7 @@
     <Content Include="admin\dialog\dialog_channel.aspx" />
     <Content Include="admin\dialog\dialog_express.aspx" />
     <Content Include="admin\dialog\dialog_group_price.aspx" />
+    <Content Include="admin\dialog\dialog_item_article.aspx" />
     <Content Include="admin\dialog\dialog_map.aspx" />
     <Content Include="admin\dialog\dialog_picture.aspx" />
     <Content Include="admin\dialog\dialog_print.aspx" />
@@ -928,6 +929,13 @@
     </Compile>
     <Compile Include="admin\dialog\dialog_group_price.aspx.designer.cs">
       <DependentUpon>dialog_group_price.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\dialog\dialog_item_article.aspx.cs">
+      <DependentUpon>dialog_item_article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\dialog\dialog_item_article.aspx.designer.cs">
+      <DependentUpon>dialog_item_article.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\dialog\dialog_map.aspx.cs">
       <DependentUpon>dialog_map.aspx</DependentUpon>

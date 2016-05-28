@@ -395,7 +395,7 @@ namespace DTcms.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" id,site_id,name,title,is_albums,is_attach,is_spec,sort_id，is_items,item_channel_id ");
+            strSql.Append(" id,site_id,name,title,is_albums,is_attach,is_spec,sort_id,is_items,item_channel_id ");
             strSql.Append(" FROM " + databaseprefix + "channel ");
             if (strWhere.Trim() != "")
             {

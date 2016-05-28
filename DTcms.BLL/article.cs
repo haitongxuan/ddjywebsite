@@ -210,6 +210,11 @@ namespace DTcms.BLL
             return dal.GetList(channel_name, category_id, Top, strWhere, filedOrder);
         }
 
+        public DataSet GetList(int channel_id, int category_id, int Top, string strWhere, string filedOrder)
+        {
+            return dal.GetList(channel_id, category_id, Top, strWhere, filedOrder);
+        }
+
         /// <summary>
         /// 根据视图获得查询分页数据
         /// </summary>

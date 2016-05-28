@@ -36,6 +36,7 @@ namespace DTcms.Web.admin.channel
             {
                 ChkAdminLevel("sys_channel_manage", DTEnums.ActionEnum.View.ToString()); //检查权限
                 TreeBind(); //绑定类别
+                BindItemChannel();//绑定明细渠道
                 FieldBind(); //绑定扩展字段
                 if (action == DTEnums.ActionEnum.Edit.ToString()) //修改
                 {
@@ -147,6 +148,13 @@ namespace DTcms.Web.admin.channel
                 cbIsSpec.Checked = true;
             }
             txtSortId.Text = model.sort_id.ToString();
+            if (model.is_items == 1)
+            {
+                cbIsItems.Checked = true;
+                div_item_channel_id.Style.Clear();
+                if (model.item_channel_id != 0)
+                    rblItemChannel.SelectedValue = model.item_channel_id.ToString();
+            }
 
             //赋值扩展字段
             if (model.channel_fields != null)
@@ -190,6 +198,14 @@ namespace DTcms.Web.admin.channel
                 model.is_spec = 1;
             }
             model.sort_id = Utils.StrToInt(txtSortId.Text.Trim(), 99);
+            if (cbIsItems.Checked)
+            {
+                model.is_items = 1;
+                if (!string.IsNullOrEmpty(rblItemChannel.SelectedValue))
+                {
+                    model.item_channel_id = int.Parse(rblItemChannel.SelectedValue);
+                }
+            }
 
             //添加频道扩展字段
             List<Model.channel_field> ls = new List<Model.channel_field>();
@@ -272,6 +288,8 @@ namespace DTcms.Web.admin.channel
             model.is_albums = 0;
             model.is_attach = 0;
             model.is_spec = 0;
+            model.is_items = 0;
+            model.item_channel_id = 0;
             if (cbIsAlbums.Checked == true)
             {
                 model.is_albums = 1;
@@ -285,6 +303,14 @@ namespace DTcms.Web.admin.channel
                 model.is_spec = 1;
             }
             model.sort_id = Utils.StrToInt(txtSortId.Text.Trim(), 99);
+            if (cbIsItems.Checked)
+            {
+                model.is_items = 1;
+                if (!string.IsNullOrEmpty(rblItemChannel.SelectedValue))
+                {
+                    model.item_channel_id = int.Parse(rblItemChannel.SelectedValue);
+                }
+            }
 
             //添加频道扩展字段
             List<Model.channel_field> ls = new List<Model.channel_field>();
@@ -351,6 +377,21 @@ namespace DTcms.Web.admin.channel
 
             AddAdminLog(DTEnums.ActionEnum.Edit.ToString(), "修改频道" + model.title); //记录日志
             return true;
+        }
+        #endregion
+
+        #region 绑定明细频道=========
+
+        private void BindItemChannel()
+        {
+            BLL.channel bll = new BLL.channel();
+            DataTable dt = bll.GetList(0, "", "sort_id asc,id desc").Tables[0];
+
+            this.rblItemChannel.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                this.rblItemChannel.Items.Add(new ListItem(dr["title"].ToString(), dr["id"].ToString()));
+            }
         }
         #endregion
 

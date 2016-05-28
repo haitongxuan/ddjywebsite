@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wh.aspx.cs" Inherits="DTcms.Web.api.weixin.wh" %>

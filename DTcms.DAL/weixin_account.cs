@@ -135,7 +135,7 @@ namespace DTcms.DAL
             List<CommandInfo> sqllist = new List<CommandInfo>();
             StringBuilder strSql7 = new StringBuilder();
             strSql7.Append("delete " + databaseprefix + "weixin_request_content ");
-            strSql7.Append(" where account_id=@raccount_id");
+            strSql7.Append(" where account_id=@account_id");
             SqlParameter[] parameters7 = {
 					new SqlParameter("@account_id", SqlDbType.Int,4)};
             parameters7[0].Value = id;
@@ -144,7 +144,7 @@ namespace DTcms.DAL
 
             StringBuilder strSql6 = new StringBuilder();
             strSql6.Append("delete " + databaseprefix + "weixin_request_rule ");
-            strSql6.Append(" where account_id=@raccount_id");
+            strSql6.Append(" where account_id=@account_id");
             SqlParameter[] parameters6 = {
 					new SqlParameter("@account_id", SqlDbType.Int,4)};
             parameters6[0].Value = id;
@@ -160,23 +160,23 @@ namespace DTcms.DAL
             cmd = new CommandInfo(strSql5.ToString(), parameters5);
             sqllist.Add(cmd);
 
-            StringBuilder strSql4 = new StringBuilder();
-            strSql4.Append("delete from " + databaseprefix + "weixin_lbs_shop");
-            strSql4.Append(" where account_id=@account_id");
-            SqlParameter[] parameters4 = {
-					new SqlParameter("@account_id", SqlDbType.Int,4)};
-            parameters4[0].Value = id;
-            cmd = new CommandInfo(strSql4.ToString(), parameters4);
-            sqllist.Add(cmd);
+     //       StringBuilder strSql4 = new StringBuilder();
+     //       strSql4.Append("delete from " + databaseprefix + "weixin_lbs_shop");
+     //       strSql4.Append(" where account_id=@account_id");
+     //       SqlParameter[] parameters4 = {
+					//new SqlParameter("@account_id", SqlDbType.Int,4)};
+     //       parameters4[0].Value = id;
+     //       cmd = new CommandInfo(strSql4.ToString(), parameters4);
+     //       sqllist.Add(cmd);
 
-            StringBuilder strSql3 = new StringBuilder();
-            strSql3.Append("delete from " + databaseprefix + "weixin_lbs_setting");
-            strSql3.Append(" where account_id=@account_id");
-            SqlParameter[] parameters3 = {
-					new SqlParameter("@account_id", SqlDbType.Int,4)};
-            parameters3[0].Value = id;
-            cmd = new CommandInfo(strSql3.ToString(), parameters3);
-            sqllist.Add(cmd);
+     //       StringBuilder strSql3 = new StringBuilder();
+     //       strSql3.Append("delete from " + databaseprefix + "weixin_lbs_setting");
+     //       strSql3.Append(" where account_id=@account_id");
+     //       SqlParameter[] parameters3 = {
+					//new SqlParameter("@account_id", SqlDbType.Int,4)};
+     //       parameters3[0].Value = id;
+     //       cmd = new CommandInfo(strSql3.ToString(), parameters3);
+     //       sqllist.Add(cmd);
 
             StringBuilder strSql2 = new StringBuilder();
             strSql2.Append("delete from " + databaseprefix + "weixin_access_token");

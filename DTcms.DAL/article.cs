@@ -252,6 +252,42 @@ namespace DTcms.DAL
                         }
                         #endregion
 
+                        #region 添加明细信息============
+
+                        if (model.article_items != null)
+                        {
+                            StringBuilder strSql7;
+                            foreach (var item in model.article_items)
+                            {
+                                strSql7 = new StringBuilder();
+                                strSql7.Append("insert into " + databaseprefix + "article_item(");
+                                strSql7.Append("article_id,item_article_id,channel_id,");
+                                strSql7.Append("item_channel_id,sort_id,item_title,item_img_url) ");
+                                strSql7.Append(" values (");
+                                strSql7.Append("@article_id,@item_article_id,@channel_id,");
+                                strSql7.Append("@item_channel_id,@sort_id,@item_title,@item_img_url)");
+                                SqlParameter[] parameters7 =
+                                {
+                                    new SqlParameter("@article_id",SqlDbType.Int),
+                                    new SqlParameter("@item_article_id",SqlDbType.Int),
+                                    new SqlParameter("@channel_id",SqlDbType.Int),
+                                    new SqlParameter("@item_channel_id",SqlDbType.Int),
+                                    new SqlParameter("@sort_id",SqlDbType.Int),
+                                    new SqlParameter("@item_title",SqlDbType.NVarChar,200),
+                                    new SqlParameter("@item_img_url",SqlDbType.NVarChar,500),
+                                };
+                                parameters7[0].Value = model.id;
+                                parameters7[1].Value = item.item_article_id;
+                                parameters7[2].Value = item.channel_id;
+                                parameters7[3].Value = item.item_channel_id;
+                                parameters7[4].Value = item.sort_id;
+                                parameters7[5].Value = item.item_title;
+                                parameters7[6].Value = item.item_img_url;
+                                DbHelperSQL.GetSingle(conn, trans, strSql7.ToString(), parameters7);
+                            }
+                        }
+                        #endregion
+
                         #region 添加Tags标签====================
                         if (model.tags != null && model.tags.Trim().Length > 0)
                         {
@@ -560,6 +596,44 @@ namespace DTcms.DAL
                         }
                         #endregion
 
+                        #region 修改明细信息==================
+
+                        DbHelperSQL.ExecuteSql(conn, trans,
+                            "delete from " + databaseprefix + "article_item where article_id=" + model.id);
+                        if (model.article_items != null)
+                        {
+                            StringBuilder strSql7;
+                            foreach (var item in model.article_items)
+                            {
+                                strSql7 = new StringBuilder();
+                                strSql7.Append("insert into " + databaseprefix + "article_item(");
+                                strSql7.Append("article_id,item_article_id,channel_id,");
+                                strSql7.Append("item_channel_id,sort_id,item_title,item_img_url) ");
+                                strSql7.Append(" values (");
+                                strSql7.Append("@article_id,@item_article_id,@channel_id,");
+                                strSql7.Append("@item_channel_id,@sort_id,@item_title,@item_img_url)");
+                                SqlParameter[] parameters7 =
+                                {
+                                    new SqlParameter("@article_id",SqlDbType.Int),
+                                    new SqlParameter("@item_article_id",SqlDbType.Int),
+                                    new SqlParameter("@channel_id",SqlDbType.Int),
+                                    new SqlParameter("@item_channel_id",SqlDbType.Int),
+                                    new SqlParameter("@sort_id",SqlDbType.Int),
+                                    new SqlParameter("@item_title",SqlDbType.NVarChar,200),
+                                    new SqlParameter("@item_img_url",SqlDbType.NVarChar,500),
+                                };
+                                parameters7[0].Value = item.article_id;
+                                parameters7[1].Value = item.item_article_id;
+                                parameters7[2].Value = item.channel_id;
+                                parameters7[3].Value = item.item_channel_id;
+                                parameters7[4].Value = item.sort_id;
+                                parameters7[5].Value = item.item_title;
+                                parameters7[6].Value = item.item_img_url;
+                                DbHelperSQL.GetSingle(conn, trans, strSql7.ToString(), parameters7);
+                            }
+                        }
+                        #endregion
+
                         #region 修改Tags标签==========================
                         //删除已有的Tags标签关系
                         new article_tags(databaseprefix).Delete(conn, trans, model.id);
@@ -660,9 +734,9 @@ namespace DTcms.DAL
             cmd = new CommandInfo(strSql6.ToString(), parameters6);
             sqllist.Add(cmd);
 
-            //删除Tags标签关系
+            //删除明细信息
             StringBuilder strSql7 = new StringBuilder();
-            strSql7.Append("delete from " + databaseprefix + "article_tags_relation");
+            strSql7.Append("delete from " + databaseprefix + "article_item");
             strSql7.Append(" where article_id=@article_id");
             SqlParameter[] parameters7 = {
                     new SqlParameter("@article_id", SqlDbType.Int,4)};
@@ -670,14 +744,24 @@ namespace DTcms.DAL
             cmd = new CommandInfo(strSql7.ToString(), parameters7);
             sqllist.Add(cmd);
 
-            //删除评论
+            //删除Tags标签关系
             StringBuilder strSql8 = new StringBuilder();
-            strSql8.Append("delete from " + databaseprefix + "article_comment ");
-            strSql8.Append(" where article_id=@article_id ");
+            strSql8.Append("delete from " + databaseprefix + "article_tags_relation");
+            strSql8.Append(" where article_id=@article_id");
             SqlParameter[] parameters8 = {
                     new SqlParameter("@article_id", SqlDbType.Int,4)};
             parameters8[0].Value = id;
             cmd = new CommandInfo(strSql8.ToString(), parameters8);
+            sqllist.Add(cmd);
+
+            //删除评论
+            StringBuilder strSql9 = new StringBuilder();
+            strSql9.Append("delete from " + databaseprefix + "article_comment ");
+            strSql9.Append(" where article_id=@article_id ");
+            SqlParameter[] parameters9 = {
+                    new SqlParameter("@article_id", SqlDbType.Int,4)};
+            parameters9[0].Value = id;
+            cmd = new CommandInfo(strSql9.ToString(), parameters9);
             sqllist.Add(cmd);
 
             //删除主表
@@ -1057,6 +1141,8 @@ namespace DTcms.DAL
                 model.attach = new article_attach(databaseprefix).GetList(model.id);
                 //商品价格
                 model.goods = new article_goods(databaseprefix).GetList(model.id);
+                //明细信息
+                model.article_items = new article_item(databaseprefix).GetList(model.id);
             }
             return model;
         }
@@ -1126,6 +1212,42 @@ namespace DTcms.DAL
                 strSql.Append(" and " + strWhere);
             }
             strSql.Append(" order by " + filedOrder);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 根据视图显示前几条数据
+        /// </summary>
+        public DataSet GetList(int channel_id, int category_id, int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * FROM " + databaseprefix + "article");
+            if (channel_id > 0)
+            {
+                strSql.Append(" where channel_id=" + channel_id);
+            }
+            if (category_id > 0)
+            {
+                if (channel_id > 0)
+                {
+                    strSql.Append(" and category_id in(select id from " + databaseprefix + "article_category where class_list like '%," + category_id + ",%')");
+                }
+                else
+                {
+                    strSql.Append(" where category_id in(select id from " + databaseprefix + "article_category where class_list like '%," + category_id + ",%')");
+                }
+            }
+            if (strWhere.Trim() != "")
+            {
+                if (channel_id > 0 || category_id > 0)
+                {
+                    strSql.Append(" and " + strWhere);
+                }
+                else
+                {
+                    strSql.Append(" where " + strWhere);
+                }
+            }
             return DbHelperSQL.Query(strSql.ToString());
         }
 

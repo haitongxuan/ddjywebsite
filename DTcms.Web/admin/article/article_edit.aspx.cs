@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Data;
 using DTcms.Common;
+using DTcms.Model;
 
 namespace DTcms.Web.admin.article
 {
@@ -17,11 +18,19 @@ namespace DTcms.Web.admin.article
         protected string channel_name = string.Empty; //频道名称
         protected int channel_id;
         private int id = 0;
+        protected int item_channel_id = 0;
+        protected string itemTitle = "";
 
         //页面初始化事件
         protected void Page_Init(object sernder, EventArgs e)
         {
             this.channel_id = DTRequest.GetQueryInt("channel_id");
+            var item = new BLL.channel().GetModel(channel_id);
+            if (item.item_channel_id != 0)
+            {
+                item_channel_id = item.item_channel_id;
+                itemTitle = new BLL.channel().GetModel(item_channel_id).title;
+            }
             CreateOtherField(this.channel_id); //动态生成相应的扩展字段
         }
 
@@ -325,6 +334,10 @@ namespace DTcms.Web.admin.article
             {
                 div_spec__container.Visible = true;
             }
+            if (channelModel.is_items == 1)
+            {
+                div_item_container.Visible = true;
+            }
         }
         #endregion
 
@@ -488,6 +501,10 @@ namespace DTcms.Web.admin.article
             hide_goods_spec_list.Value = JsonHelper.ObjectToJSON(goodsSpecList);
             rptGroupPrice.DataSource = model.goods;
             rptGroupPrice.DataBind();
+            //绑定明细
+            //List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
+            rptItemArticle.DataSource = model.article_items;
+            rptItemArticle.DataBind();
             //绑定图片相册
             if (filename.StartsWith("thumb_"))
             {
@@ -717,6 +734,32 @@ namespace DTcms.Web.admin.article
             }
             #endregion
 
+            #region 保存明细信息==========
+
+            string[] itemArticleIds = Request.Form.GetValues("hide_item_article_id");
+            string[] itemArticleChannelId = Request.Form.GetValues("channel_id");
+            string[] itemArticleTitle = Request.Form.GetValues("item_article_title");
+            string[] itemArticleImg = Request.Form.GetValues("hide_item_article_img");
+            string[] sortIds = Request.Form.GetValues("item_article_sort_id");
+            List<Model.article_item> itemList = new List<article_item>();
+            if (itemArticleIds != null && itemArticleIds.Length > 0)
+            {
+                for (int i = 0; i < itemArticleIds.Length; i++)
+                {
+                    itemList.Add(new Model.article_item
+                    {
+                        channel_id = channel_id,
+                        item_article_id = int.Parse(itemArticleIds[i].ToString()),
+                        item_img_url = itemArticleImg[i].ToString(),
+                        item_title = itemArticleTitle[i].ToString(),
+                        sort_id = int.Parse(sortIds[i])
+                    });
+                }
+            }
+            model.article_items = itemList;
+
+            #endregion
+
             #region 保存相册====================
             //检查是否有自定义图片
             if (txtImgUrl.Text.Trim() == "")
@@ -890,6 +933,33 @@ namespace DTcms.Web.admin.article
                 }
                 model.goods = goodsList;
             }
+            #endregion
+
+            #region 保存明细信息==========
+
+            string[] itemArticleIds = Request.Form.GetValues("hide_item_article_id");
+            string[] itemArticleChannelId = Request.Form.GetValues("channel_id");
+            string[] itemArticleTitle = Request.Form.GetValues("item_article_title");
+            string[] itemArticleImg = Request.Form.GetValues("hide_item_article_img");
+            string[] sortIds = Request.Form.GetValues("item_article_sort_id");
+            List<Model.article_item> itemList = new List<article_item>();
+            if (itemArticleIds != null && itemArticleIds.Length > 0)
+            {
+                for (int i = 0; i < itemArticleIds.Length; i++)
+                {
+                    itemList.Add(new Model.article_item
+                    {
+                        article_id = this.id,
+                        channel_id = channel_id,
+                        item_article_id = int.Parse(itemArticleIds[i].ToString()),
+                        item_img_url = itemArticleImg[i].ToString(),
+                        item_title = itemArticleTitle[i].ToString(),
+                        sort_id = int.Parse(sortIds[i])
+                    });
+                }
+            }
+            model.article_items = itemList;
+
             #endregion
 
             #region 保存相册====================
