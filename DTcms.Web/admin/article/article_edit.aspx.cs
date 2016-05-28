@@ -20,6 +20,8 @@ namespace DTcms.Web.admin.article
         private int id = 0;
         protected int item_channel_id = 0;
         protected string itemTitle = "";
+        protected string exmsg = "";
+        protected string hide_item_article_list_str = "";
 
         //页面初始化事件
         protected void Page_Init(object sernder, EventArgs e)
@@ -65,6 +67,8 @@ namespace DTcms.Web.admin.article
             if (!Page.IsPostBack)
             {
                 ChkAdminLevel("channel_" + this.channel_name + "_list", DTEnums.ActionEnum.View.ToString()); //检查权限
+                Console.Write(channel_id);
+
                 ShowSysField(this.channel_id); //显示相应的默认控件
                 TreeBind(this.channel_id); //绑定类别
                 if (action == DTEnums.ActionEnum.Edit.ToString() || action == DTEnums.ActionEnum.Copy.ToString()) //修改
@@ -306,37 +310,45 @@ namespace DTcms.Web.admin.article
         #region 显示默认扩展字段=========================
         private void ShowSysField(int _channel_id)
         {
-            //查找该频道所选的默认字段
-            List<Model.article_attribute_field> ls = new BLL.article_attribute_field().GetModelList(this.channel_id, "is_sys=1");
-            foreach (Model.article_attribute_field modelt in ls)
+            try
             {
-                //查找相应的控件，如找到则显示
-                HtmlGenericControl htmlDiv = FindControl("div_" + modelt.name) as HtmlGenericControl;
-                if (htmlDiv != null)
+                //查找该频道所选的默认字段
+                List<Model.article_attribute_field> ls = new BLL.article_attribute_field().GetModelList(
+                    this.channel_id, "is_sys=1");
+                foreach (Model.article_attribute_field modelt in ls)
                 {
-                    htmlDiv.Visible = true;
-                    ((Label)htmlDiv.FindControl("div_" + modelt.name + "_title")).Text = modelt.title;
-                    ((TextBox)htmlDiv.FindControl("field_control_" + modelt.name)).Text = modelt.default_value;
-                    ((Label)htmlDiv.FindControl("div_" + modelt.name + "_tip")).Text = modelt.valid_tip_msg;
+                    //查找相应的控件，如找到则显示
+                    HtmlGenericControl htmlDiv = FindControl("div_" + modelt.name) as HtmlGenericControl;
+                    if (htmlDiv != null)
+                    {
+                        htmlDiv.Visible = true;
+                        ((Label)htmlDiv.FindControl("div_" + modelt.name + "_title")).Text = modelt.title;
+                        ((TextBox)htmlDiv.FindControl("field_control_" + modelt.name)).Text = modelt.default_value;
+                        ((Label)htmlDiv.FindControl("div_" + modelt.name + "_tip")).Text = modelt.valid_tip_msg;
+                    }
+                }
+                //查找该频道所开启的功能
+                Model.channel channelModel = new BLL.channel().GetModel(_channel_id);
+                if (channelModel.is_albums == 1)
+                {
+                    div_albums_container.Visible = true;
+                }
+                if (channelModel.is_attach == 1)
+                {
+                    div_attach_container.Visible = true;
+                }
+                if (channelModel.is_spec == 1)
+                {
+                    div_spec__container.Visible = true;
+                }
+                if (channelModel.is_items == 1)
+                {
+                    div_item_container.Visible = true;
                 }
             }
-            //查找该频道所开启的功能
-            Model.channel channelModel = new BLL.channel().GetModel(_channel_id);
-            if (channelModel.is_albums == 1)
+            catch (Exception ex)
             {
-                div_albums_container.Visible = true;
-            }
-            if (channelModel.is_attach == 1)
-            {
-                div_attach_container.Visible = true;
-            }
-            if (channelModel.is_spec == 1)
-            {
-                div_spec__container.Visible = true;
-            }
-            if (channelModel.is_items == 1)
-            {
-                div_item_container.Visible = true;
+                exmsg += "a:" + ex.Message + ex + ";";
             }
         }
         #endregion
@@ -502,9 +514,28 @@ namespace DTcms.Web.admin.article
             rptGroupPrice.DataSource = model.goods;
             rptGroupPrice.DataBind();
             //绑定明细
-            List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
-            rptItemArticle.DataSource = itemList;
-            rptItemArticle.DataBind();
+            try
+            {
+                List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
+                List<jsonObjet> l = new List<jsonObjet>();
+                foreach (var item in itemList)
+                {
+                    l.Add(new jsonObjet
+                    {
+                        id = item.item_article_id,
+                        img = item.item_img_url,
+                        value = item.item_title
+                    });
+                }
+
+                hide_item_article_list_str = JsonHelper.ObjectToJSON(l);
+                rptItemArticle.DataSource = itemList;
+                rptItemArticle.DataBind();
+            }
+            catch (Exception ex)
+            {
+                exmsg += "b:" + ex.Message + ex + ";";
+            }
             //绑定图片相册
             if (filename.StartsWith("thumb_"))
             {
@@ -1058,5 +1089,12 @@ namespace DTcms.Web.admin.article
             }
         }
 
+        class jsonObjet
+        {
+            public int id;
+            public string value;
+            public string img;
+        }
     }
+
 }

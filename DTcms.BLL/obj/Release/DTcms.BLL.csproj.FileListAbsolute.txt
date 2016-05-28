@@ -11,3 +11,16 @@ E:\DTCms\DTcms.4.0.2\DTcms.BLL\bin\Release\DTcms.DBUtility.pdb
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Release\DTcms.BLL.csprojResolveAssemblyReference.cache
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Release\DTcms.BLL.dll
 E:\DTCms\DTcms.4.0.2\DTcms.BLL\obj\Release\DTcms.BLL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.BLL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.BLL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.Common.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.DAL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.DBUtility.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.Model.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.Common.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.DAL.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.DBUtility.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\bin\Release\DTcms.Model.pdb
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Release\DTcms.BLL.csprojResolveAssemblyReference.cache
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Release\DTcms.BLL.dll
+C:\Users\justable\Source\Repos\ddjywebsite\DTcms.BLL\obj\Release\DTcms.BLL.pdb

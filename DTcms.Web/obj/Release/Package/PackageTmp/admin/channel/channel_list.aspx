@@ -62,12 +62,13 @@
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
     <tr>
       <th width="8%">选择</th>
-      <th align="left" width="18%">名称</th>
+      <th align="left" width="12%">名称</th>
       <th align="left" width="18%">标题</th>
       <th align="left" width="12%">所属站点</th>
       <th width="8%">相册</th>
       <th width="8%">附件</th>
-      <th width="10%">规格</th>
+      <th width="8%">规格</th>
+        <th width="8%">明细</th>
       <th align="left" width="8%">排序</th>
       <th width="10%">操作</th>
     </tr>
@@ -84,6 +85,7 @@
       <td align="center"><%#Convert.ToInt32(Eval("is_albums")) == 0 ? "×" : "√"%></td>
       <td align="center"><%#Convert.ToInt32(Eval("is_attach")) == 0 ? "×" : "√"%></td>
       <td align="center"><%#Convert.ToInt32(Eval("is_spec")) == 0 ? "×" : "√"%></td>
+      <td align="center"><%#Convert.ToInt32(Eval("is_items")) == 0 ? "×" : "√"%></td>
       <td><asp:TextBox ID="txtSortId" runat="server" Text='<%#Eval("sort_id")%>' CssClass="sort" onkeydown="return checkNumber(event);" /></td>
       <td align="center"><a href="channel_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
     </tr>
