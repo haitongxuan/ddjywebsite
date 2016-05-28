@@ -502,8 +502,8 @@ namespace DTcms.Web.admin.article
             rptGroupPrice.DataSource = model.goods;
             rptGroupPrice.DataBind();
             //绑定明细
-            //List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
-            rptItemArticle.DataSource = model.article_items;
+            List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
+            rptItemArticle.DataSource = itemList;
             rptItemArticle.DataBind();
             //绑定图片相册
             if (filename.StartsWith("thumb_"))
