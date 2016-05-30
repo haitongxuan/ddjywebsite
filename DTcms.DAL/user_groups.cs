@@ -29,7 +29,7 @@ namespace DTcms.DAL
             strSql.Append("select count(1) from " + databaseprefix + "user_groups");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
@@ -42,20 +42,21 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into " + databaseprefix + "user_groups(");
-            strSql.Append("title,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock)");
+            strSql.Append("title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock)");
             strSql.Append(" values (");
-            strSql.Append("@title,@grade,@upgrade_exp,@amount,@point,@discount,@is_default,@is_upgrade,@is_lock)");
+            strSql.Append("@title,@call_index,@grade,@upgrade_exp,@amount,@point,@discount,@is_default,@is_upgrade,@is_lock)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-					new SqlParameter("@title", SqlDbType.NVarChar,100),
-					new SqlParameter("@grade", SqlDbType.Int,4),
-					new SqlParameter("@upgrade_exp", SqlDbType.Int,4),
-					new SqlParameter("@amount", SqlDbType.Decimal,5),
-					new SqlParameter("@point", SqlDbType.Int,4),
-					new SqlParameter("@discount", SqlDbType.Int,4),
-					new SqlParameter("@is_default", SqlDbType.TinyInt,1),
-					new SqlParameter("@is_upgrade", SqlDbType.TinyInt,1),
-					new SqlParameter("@is_lock", SqlDbType.TinyInt,1)};
+                    new SqlParameter("@title", SqlDbType.NVarChar,100),
+                    new SqlParameter("@grade", SqlDbType.Int,4),
+                    new SqlParameter("@upgrade_exp", SqlDbType.Int,4),
+                    new SqlParameter("@amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@point", SqlDbType.Int,4),
+                    new SqlParameter("@discount", SqlDbType.Int,4),
+                    new SqlParameter("@is_default", SqlDbType.TinyInt,1),
+                    new SqlParameter("@is_upgrade", SqlDbType.TinyInt,1),
+                    new SqlParameter("@is_lock", SqlDbType.TinyInt,1),
+            new SqlParameter("@call_index",SqlDbType.NVarChar,50), };
             parameters[0].Value = model.title;
             parameters[1].Value = model.grade;
             parameters[2].Value = model.upgrade_exp;
@@ -65,6 +66,7 @@ namespace DTcms.DAL
             parameters[6].Value = model.is_default;
             parameters[7].Value = model.is_upgrade;
             parameters[8].Value = model.is_lock;
+            parameters[9].Value = model.call_index;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -85,6 +87,7 @@ namespace DTcms.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update " + databaseprefix + "user_groups set ");
             strSql.Append("title=@title,");
+            strSql.Append("call_index=@call_index,");
             strSql.Append("grade=@grade,");
             strSql.Append("upgrade_exp=@upgrade_exp,");
             strSql.Append("amount=@amount,");
@@ -95,16 +98,17 @@ namespace DTcms.DAL
             strSql.Append("is_lock=@is_lock");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@title", SqlDbType.NVarChar,100),
-					new SqlParameter("@grade", SqlDbType.Int,4),
-					new SqlParameter("@upgrade_exp", SqlDbType.Int,4),
-					new SqlParameter("@amount", SqlDbType.Decimal,5),
-					new SqlParameter("@point", SqlDbType.Int,4),
-					new SqlParameter("@discount", SqlDbType.Int,4),
-					new SqlParameter("@is_default", SqlDbType.TinyInt,1),
-					new SqlParameter("@is_upgrade", SqlDbType.TinyInt,1),
-					new SqlParameter("@is_lock", SqlDbType.TinyInt,1),
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@title", SqlDbType.NVarChar,100),
+                    new SqlParameter("@grade", SqlDbType.Int,4),
+                    new SqlParameter("@upgrade_exp", SqlDbType.Int,4),
+                    new SqlParameter("@amount", SqlDbType.Decimal,5),
+                    new SqlParameter("@point", SqlDbType.Int,4),
+                    new SqlParameter("@discount", SqlDbType.Int,4),
+                    new SqlParameter("@is_default", SqlDbType.TinyInt,1),
+                    new SqlParameter("@is_upgrade", SqlDbType.TinyInt,1),
+                    new SqlParameter("@is_lock", SqlDbType.TinyInt,1),
+                    new SqlParameter("@id", SqlDbType.Int,4),
+            new SqlParameter("@call_index",SqlDbType.NVarChar,50), };
             parameters[0].Value = model.title;
             parameters[1].Value = model.grade;
             parameters[2].Value = model.upgrade_exp;
@@ -115,6 +119,7 @@ namespace DTcms.DAL
             parameters[7].Value = model.is_upgrade;
             parameters[8].Value = model.is_lock;
             parameters[9].Value = model.id;
+            parameters[10].Value = model.call_index;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -148,7 +153,7 @@ namespace DTcms.DAL
             strSql.Append("delete from " + databaseprefix + "user_groups ");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
             cmd = new CommandInfo(strSql.ToString(), parameters);
             sqllist.Add(cmd);
@@ -170,12 +175,33 @@ namespace DTcms.DAL
         public Model.user_groups GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,title,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
+            strSql.Append("select top 1 id,title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
             strSql.Append(" from " + databaseprefix + "user_groups");
             strSql.Append(" where id=@id");
             SqlParameter[] parameters = {
-					new SqlParameter("@id", SqlDbType.Int,4)};
+                    new SqlParameter("@id", SqlDbType.Int,4)};
             parameters[0].Value = id;
+
+            DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToModel(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Model.user_groups GetModel(string call_index)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select top 1 id,title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
+            strSql.Append(" from " + databaseprefix + "user_groups");
+            strSql.Append(" where call_index=@call_index");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@call_index", SqlDbType.Int,4)};
+            parameters[0].Value = call_index;
 
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
@@ -199,7 +225,7 @@ namespace DTcms.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" id,title,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock ");
+            strSql.Append(" id,title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock ");
             strSql.Append(" FROM " + databaseprefix + "user_groups ");
             if (strWhere.Trim() != "")
             {
@@ -249,7 +275,7 @@ namespace DTcms.DAL
         public Model.user_groups GetDefault()
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,title,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
+            strSql.Append("select top 1 id,title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
             strSql.Append(" from " + databaseprefix + "user_groups");
             strSql.Append(" where is_lock=0 order by is_default desc,id asc");
 
@@ -270,7 +296,7 @@ namespace DTcms.DAL
         public Model.user_groups GetUpgrade(int group_id, int exp)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 id,title,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
+            strSql.Append("select top 1 id,title,call_index,grade,upgrade_exp,amount,point,discount,is_default,is_upgrade,is_lock");
             strSql.Append(" from " + databaseprefix + "user_groups");
             strSql.Append(" where is_lock=0 and is_upgrade=1 and grade>(select grade from " + databaseprefix + "user_groups where id=" + group_id + ") and upgrade_exp<=" + exp);
             strSql.Append(" order by grade asc");
@@ -300,6 +326,10 @@ namespace DTcms.DAL
                 if (row["title"] != null)
                 {
                     model.title = row["title"].ToString();
+                }
+                if (row["call_index"] != null)
+                {
+                    model.call_index = row["call_index"].ToString();
                 }
                 if (row["grade"] != null && row["grade"].ToString() != "")
                 {

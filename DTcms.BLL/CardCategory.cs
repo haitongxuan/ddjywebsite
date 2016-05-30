@@ -67,23 +67,10 @@ namespace DTcms.BLL
             return dal.GetModel(CardCategoryId);
         }
 
-
-
-
-
-
-
         public DTcms.Model.CardCategory GetModel(string CallIndex)
         {
             return dal.GetModel(CallIndex);
         }
-
-
-
-
-
-
-
 
         /// <summary>
         /// 获得数据列表
@@ -171,6 +158,11 @@ namespace DTcms.BLL
                     if (dt.Rows[n]["Duration"].ToString() != "")
                     {
                         model.Duration = decimal.Parse(dt.Rows[n]["Duration"].ToString());
+                    }
+
+                    if (dt.Rows[n]["UserGroupCallIndex"].ToString() != "")
+                    {
+                        model.UserGroupCallIndex = dt.Rows[n]["UserGroupCallIndex"].ToString();
                     }
 
 

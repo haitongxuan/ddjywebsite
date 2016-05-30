@@ -51,7 +51,10 @@
             $(".upload-img").InitUploader({ filesize: "<%=siteConfig.imgsize %>", sendurl: "../../tools/upload_ajax.ashx", swf: "../../scripts/webuploader/uploader.swf", filetypes: "<%=siteConfig.fileextension %>" });
             $(".upload-video").InitUploader({ filesize: "<%=siteConfig.videosize %>", sendurl: "../../tools/upload_ajax.ashx", swf: "../../scripts/webuploader/uploader.swf", filetypes: "<%=siteConfig.videoextension %>" });
             $(".upload-album").InitUploader({ btntext: "批量上传", multiple: true, water: true, thumbnail: true, filesize: "<%=siteConfig.imgsize %>", sendurl: "../../tools/upload_ajax.ashx", swf: "../../scripts/webuploader/uploader.swf" });
-
+            //初始化明细json
+            var jsonitemstr = <%=hide_item_article_list_str%>;
+            var itemArr = eval(jsonitemstr);
+            $("hide_item_article_list").val(itemArr);
             //设置封面图片的样式
             $(".photo-list ul li .img-box img").each(function () {
                 if ($(this).attr("src") == $("#hidFocusPhoto").val()) {
@@ -387,7 +390,7 @@
                                         <ItemTemplate>
                                             <tr>
                                                 <td align="center">
-                                                    <input type="hidden" name="hide_item_article_id" value="<%#Eval("id")%>" />
+                                                    <input type="hidden" name="hide_item_article_id" value="<%#Eval("item_article_id")%>" />
                                                     <input type="hidden" name="hide_item_article_img" value="<%#Eval("item_img_url") %>" />
                                                     <input type="hidden" name="channel_id" value="<%#Eval("channel_id") %>" />
                                                     <img id="item_article_img" style="width: 32px; height: 32px; vertical-align: middle;" src="<%#Eval("item_img_url") %>" />

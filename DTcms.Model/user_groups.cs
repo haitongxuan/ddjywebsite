@@ -12,6 +12,7 @@ namespace DTcms.Model
         #region Model
         private int _id;
         private string _title = "";
+        private string _call_index = "";
         private int _grade = 0;
         private int _upgrade_exp = 0;
         private decimal _amount = 0M;
@@ -35,6 +36,14 @@ namespace DTcms.Model
         {
             set { _title = value; }
             get { return _title; }
+        }
+        /// <summary>
+        /// 调用名称
+        /// </summary>
+        public string call_index
+        {
+            set { _call_index = value; }
+            get { return _call_index; }
         }
         /// <summary>
         /// 会员等级值

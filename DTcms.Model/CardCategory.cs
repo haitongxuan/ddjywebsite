@@ -125,6 +125,14 @@ namespace DTcms.Model
             get { return _modifyusername; }
             set { _modifyusername = value; }
         }
-
+        /// <summary>
+		/// 用户组调用名称
+        /// </summary>		
+		private string _usergroupcallindex;
+        public string UserGroupCallIndex
+        {
+            get { return _usergroupcallindex; }
+            set { _usergroupcallindex = value; }
+        }
     }
 }

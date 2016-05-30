@@ -85,6 +85,7 @@ namespace DTcms.Web.admin.card
             txtDescribe.Text = model.Describe;
             txtDuration.Text = model.Duration.ToString();
             txtCallIndex.Text = model.CallIndex;
+            txtUserGroupCallIndex.Text = model.UserGroupCallIndex;
             //编写赋值操作End
         }
         #endregion
@@ -112,6 +113,7 @@ namespace DTcms.Web.admin.card
             model.CreateDate = DateTime.Now;
             model.CreateUserName = GetAdminInfo().user_name;
             model.ModifyDate = DateTime.Now;
+            model.UserGroupCallIndex = txtUserGroupCallIndex.Text;
             //编写添加操作End
 
             if (bll.Add(model) > 0)
@@ -149,6 +151,7 @@ namespace DTcms.Web.admin.card
             model.Layer = model.ParentId + 1;
             model.ModifyDate = DateTime.Now;
             model.ModifyUserName = GetAdminInfo().user_name;
+            model.UserGroupCallIndex = txtUserGroupCallIndex.Text;
             //编写编辑操作End
 
             if (bll.Update(model))

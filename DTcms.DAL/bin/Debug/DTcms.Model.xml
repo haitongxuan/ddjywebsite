@@ -939,6 +939,11 @@
             修改用户名
             </summary>		
         </member>
+        <member name="F:DTcms.Model.CardCategory._usergroupcallindex">
+            <summary>
+            用户组调用名称
+            </summary>		
+        </member>
         <member name="F:DTcms.Model.Category._categoryid">
             <summary>
             课程分类主键
@@ -3179,6 +3184,16 @@
             注册IP
             </summary>
         </member>
+        <member name="P:DTcms.Model.users.group_start_time">
+            <summary>
+            用户组开始时间
+            </summary>		
+        </member>
+        <member name="P:DTcms.Model.users.group_end_time">
+            <summary>
+            用户组结束时间
+            </summary>		
+        </member>
         <member name="F:DTcms.Model.UserToken._usertokenid">
             <summary>
             用户令牌主键
@@ -3522,6 +3537,11 @@
         <member name="P:DTcms.Model.user_groups.title">
             <summary>
             组别名称
+            </summary>
+        </member>
+        <member name="P:DTcms.Model.user_groups.call_index">
+            <summary>
+            调用名称
             </summary>
         </member>
         <member name="P:DTcms.Model.user_groups.grade">

@@ -58,6 +58,11 @@ namespace DTcms.BLL
             return dal.GetModel(id);
         }
 
+        public Model.user_groups GetModel(string call_index)
+        {
+            return dal.GetModel(call_index);
+        }
+
         /// <summary>
         /// 获得前几行数据
         /// </summary>

@@ -32,6 +32,8 @@ namespace DTcms.Model
         private int _status = 0;
         private DateTime _reg_time = DateTime.Now;
         private string _reg_ip;
+        private DateTime _group_start_time;
+        private DateTime _group_end_time;
 
         /// <summary>
         /// 自增ID
@@ -208,6 +210,22 @@ namespace DTcms.Model
         {
             set { _reg_ip = value; }
             get { return _reg_ip; }
+        }
+        /// <summary>
+		/// 用户组开始时间
+        /// </summary>		
+        public DateTime group_start_time
+        {
+            get { return _group_start_time; }
+            set { _group_start_time = value; }
+        }
+        /// <summary>
+        /// 用户组结束时间
+        /// </summary>		
+        public DateTime group_end_time
+        {
+            get { return _group_end_time; }
+            set { _group_end_time = value; }
         }
         #endregion
 

@@ -47,6 +47,7 @@ namespace DTcms.Web.admin.users
             BLL.user_groups bll = new BLL.user_groups();
             Model.user_groups model = bll.GetModel(_id);
             txtTitle.Text = model.title;
+            txtCallIndex.Text = model.call_index;
             if (model.is_lock == 1)
             {
                 rblIsLock.Checked = true;
@@ -75,6 +76,7 @@ namespace DTcms.Web.admin.users
             BLL.user_groups bll = new BLL.user_groups();
 
             model.title = txtTitle.Text.Trim();
+            model.call_index = txtCallIndex.Text.Trim();
             model.is_lock = 0;
             if (rblIsLock.Checked == true)
             {
@@ -112,6 +114,7 @@ namespace DTcms.Web.admin.users
             Model.user_groups model = bll.GetModel(_id);
 
             model.title = txtTitle.Text.Trim();
+            model.call_index = txtCallIndex.Text.Trim();
             model.is_lock = 0;
             if (rblIsLock.Checked == true)
             {

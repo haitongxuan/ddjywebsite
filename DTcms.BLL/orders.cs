@@ -143,6 +143,7 @@ namespace DTcms.BLL
                         DbHelperSQL.GetSingle(conn, trans, strSql1.ToString(), parameters1); //带事务
 
                         var model = GetModel(order_no);
+                        var user = new users().GetModel(model.user_name);
                         foreach (var g in model.order_goods)
                         {
                             var abll = new article();
@@ -150,9 +151,9 @@ namespace DTcms.BLL
                             {
                                 StringBuilder strSql = new StringBuilder();
                                 var article = abll.GetModel(g.article_id);
-                                var user = new users().GetModel(model.user_name);
                                 string callindex = article.fields["cardcategorycallindex"];
                                 var cardcategory = new BLL.CardCategory().GetModel(callindex);
+                                var ug = new BLL.user_groups().GetModel(cardcategory.UserGroupCallIndex);
                                 strSql.Append("insert into " + siteConfig.edudatabaseprefix + "Card(");
                                 strSql.Append("CardCategoryId,Code,CreateDate,StartDate,EndDate");
                                 strSql.Append(") values (");
@@ -168,13 +169,15 @@ namespace DTcms.BLL
                                     new SqlParameter("@EndDate", SqlDbType.DateTime)
 
                                 };
-
+                                var startTime = DateTime.Now;
+                                var endTime = DateTime.Now.AddDays((double)cardcategory.Duration);
                                 parameters[0].Value = cardcategory.CardCategoryId;
-                                parameters[1].Value = Utils.GetCheckCode(7);;
-                                parameters[2].Value = DateTime.Now;
-                                parameters[3].Value = DateTime.Now;
-                                parameters[4].Value = DateTime.Now.AddDays((double)cardcategory.Duration);
+                                parameters[1].Value = Utils.GetCheckCode(7); ;
+                                parameters[2].Value = startTime;
+                                parameters[3].Value = startTime;
+                                parameters[4].Value = endTime;
                                 object obj = DbHelperSQL.GetSingle(conn, trans, strSql.ToString(), parameters); //带事务
+
                                 int id = Convert.ToInt32(obj);
                                 StringBuilder strSqlUC = new StringBuilder();
                                 strSqlUC.Append("insert into " + siteConfig.edudatabaseprefix + "UserCard(");
@@ -195,6 +198,25 @@ namespace DTcms.BLL
                                 parametersUC[2].Value = cardcategory.CardCategoryId;
 
                                 DbHelperSQL.GetSingle(conn, trans, strSqlUC.ToString(), parametersUC);
+
+                                StringBuilder strSqlUU = new StringBuilder();
+                                strSqlUU.Append("update " + siteConfig.sysdatabaseprefix + "users set ");
+                                strSqlUU.Append(" group_id=@group_id,");
+                                strSqlUU.Append(" group_start_time=@group_start_time,");
+                                strSqlUU.Append(" group_end_time=@group_end_time ");
+                                strSqlUU.Append(" where id=@id");
+                                SqlParameter[] parametersUU =
+                                {
+                                    new SqlParameter("@group_id",SqlDbType.Int,4),
+                                    new SqlParameter("@group_start_time",SqlDbType.DateTime),
+                                    new SqlParameter("@group_end_time",SqlDbType.DateTime),
+                                    new SqlParameter("@id",SqlDbType.Int,4)
+                                };
+                                parametersUU[0].Value = ug.id;
+                                parametersUU[1].Value = startTime;
+                                parametersUU[2].Value = endTime;
+                                parametersUU[3].Value = user.id;
+                                DbHelperSQL.GetSingle(conn, trans, strSqlUU.ToString(), parametersUU);
                             }
                         }
                         trans.Commit();

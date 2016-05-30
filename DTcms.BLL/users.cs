@@ -12,9 +12,11 @@ namespace DTcms.BLL
     {
         private readonly Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig(); //获得站点配置信息
         private readonly DAL.users dal;
+        private readonly DAL.user_groups gdal;
         public users()
         {
             dal = new DAL.users(siteConfig.sysdatabaseprefix);
+            gdal = new DAL.user_groups(siteConfig.sysdatabaseprefix);
         }
 
         #region 基本方法===================================
@@ -71,6 +73,12 @@ namespace DTcms.BLL
         /// </summary>
         public Model.users GetModel(int id)
         {
+            var user = dal.GetModel(id);
+            var now = DateTime.Now;
+            if (now > user.group_end_time || now < user.group_start_time)
+            {
+                user.group_id = gdal.GetDefault().id;
+            }
             return dal.GetModel(id);
         }
 
@@ -97,7 +105,13 @@ namespace DTcms.BLL
                 //把明文进行加密重新赋值
                 password = DESEncrypt.Encrypt(password, salt);
             }
-            return dal.GetModel(user_name, password, emaillogin, mobilelogin);
+            var user = dal.GetModel(user_name, password, emaillogin, mobilelogin);
+            var now = DateTime.Now;
+            if (now > user.group_end_time || now < user.group_start_time)
+            {
+                user.group_id = gdal.GetDefault().id;
+            }
+            return user;
         }
 
         /// <summary>
@@ -105,6 +119,12 @@ namespace DTcms.BLL
         /// </summary>
         public Model.users GetModel(string user_name)
         {
+            var user = dal.GetModel(user_name);
+            var now = DateTime.Now;
+            if (now > user.group_end_time || now < user.group_start_time)
+            {
+                user.group_id = gdal.GetDefault().id;
+            }
             return dal.GetModel(user_name);
         }
 
@@ -186,7 +206,8 @@ namespace DTcms.BLL
             {
                 return false;
             }
-            int result = UpdateField(id, "group_id=" + groupModel.id);
+            int result = UpdateField(id, "group_id=" + groupModel.id
+                + ",group_start_time=" + DateTime.Now + ",group_end_time=" + DateTime.Now.AddDays(365));
             if (result > 0)
             {
                 //增加积分
@@ -203,6 +224,6 @@ namespace DTcms.BLL
             return true;
         }
         #endregion
-        
+
     }
 }

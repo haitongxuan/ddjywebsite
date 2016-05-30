@@ -56,9 +56,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into " + databaseprefix + "CardCategory(");
-            strSql.Append("CreateDate,CreateUserName,ModifyDate,ModifyUserName,ParentId,CallIndex,Layer,FullName,Describe,ImagUrl,BackImageUrl,Duration");
+            strSql.Append("CreateDate,CreateUserName,ModifyDate,ModifyUserName,ParentId,CallIndex,Layer,FullName,Describe,ImagUrl,BackImageUrl,Duration,UserGroupCallIndex");
             strSql.Append(") values (");
-            strSql.Append("@CreateDate,@CreateUserName,@ModifyDate,@ModifyUserName,@ParentId,@CallIndex,@Layer,@FullName,@Describe,@ImagUrl,@BackImageUrl,@Duration");
+            strSql.Append("@CreateDate,@CreateUserName,@ModifyDate,@ModifyUserName,@ParentId,@CallIndex,@Layer,@FullName,@Describe,@ImagUrl,@BackImageUrl,@Duration,@UserGroupCallIndex");
             strSql.Append(") ");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
@@ -73,7 +73,8 @@ namespace DTcms.DAL
                         new SqlParameter("@Describe", SqlDbType.VarChar,200) ,
                         new SqlParameter("@ImagUrl", SqlDbType.VarChar,200) ,
                         new SqlParameter("@BackImageUrl", SqlDbType.VarChar,200) ,
-                        new SqlParameter("@Duration", SqlDbType.Decimal,9)
+                        new SqlParameter("@Duration", SqlDbType.Decimal,9),
+                        new SqlParameter("@UserGroupCallIndex",SqlDbType.NVarChar,50), 
 
             };
 
@@ -89,6 +90,7 @@ namespace DTcms.DAL
             parameters[9].Value = model.ImagUrl;
             parameters[10].Value = model.BackImageUrl;
             parameters[11].Value = model.Duration;
+            parameters[12].Value = model.UserGroupCallIndex;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -124,7 +126,8 @@ namespace DTcms.DAL
             strSql.Append(" Describe = @Describe , ");
             strSql.Append(" ImagUrl = @ImagUrl , ");
             strSql.Append(" BackImageUrl = @BackImageUrl , ");
-            strSql.Append(" Duration = @Duration  ");
+            strSql.Append(" Duration = @Duration , ");
+            strSql.Append(" UserGroupCallIndex=@UserGroupCallIndex");
             strSql.Append(" where CardCategoryId=@CardCategoryId ");
 
             SqlParameter[] parameters = {
@@ -140,8 +143,8 @@ namespace DTcms.DAL
                         new SqlParameter("@Describe", SqlDbType.VarChar,200) ,
                         new SqlParameter("@ImagUrl", SqlDbType.VarChar,200) ,
                         new SqlParameter("@BackImageUrl", SqlDbType.VarChar,200) ,
-                        new SqlParameter("@Duration", SqlDbType.Decimal,9)
-
+                        new SqlParameter("@Duration", SqlDbType.Decimal,9),
+                        new SqlParameter("@UserGroupCallIndex",SqlDbType.NVarChar,50), 
             };
 
             parameters[0].Value = model.CardCategoryId;
@@ -157,6 +160,7 @@ namespace DTcms.DAL
             parameters[10].Value = model.ImagUrl;
             parameters[11].Value = model.BackImageUrl;
             parameters[12].Value = model.Duration;
+            parameters[13].Value = model.UserGroupCallIndex;
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -222,7 +226,7 @@ namespace DTcms.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select CardCategoryId, CreateDate, CreateUserName, ModifyDate, ModifyUserName, ParentId, CallIndex, Layer, FullName, Describe, ImagUrl, BackImageUrl, Duration  ");
+            strSql.Append("select CardCategoryId, CreateDate, CreateUserName, ModifyDate, ModifyUserName, ParentId, CallIndex, Layer, FullName, Describe, ImagUrl, BackImageUrl, Duration,UserGroupCallIndex  ");
             strSql.Append("  from " + databaseprefix + "CardCategory ");
             strSql.Append(" where CardCategoryId=@CardCategoryId");
             SqlParameter[] parameters = {
@@ -267,6 +271,10 @@ namespace DTcms.DAL
                 {
                     model.Duration = decimal.Parse(ds.Tables[0].Rows[0]["Duration"].ToString());
                 }
+                if (ds.Tables[0].Rows[0]["UserGroupCallIndex"].ToString() != "")
+                {
+                    model.UserGroupCallIndex = ds.Tables[0].Rows[0]["UserGroupCallIndex"].ToString();
+                }
 
                 return model;
             }
@@ -283,7 +291,7 @@ namespace DTcms.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select CardCategoryId, CreateDate, CreateUserName, ModifyDate, ModifyUserName, ParentId, CallIndex, Layer, FullName, Describe, ImagUrl, BackImageUrl, Duration  ");
+            strSql.Append("select CardCategoryId, CreateDate, CreateUserName, ModifyDate, ModifyUserName, ParentId, CallIndex, Layer, FullName, Describe, ImagUrl, BackImageUrl, Duration,UserGroupCallIndex  ");
             strSql.Append("  from " + databaseprefix + "CardCategory ");
             strSql.Append(" where CallIndex=@CallIndex");
             SqlParameter[] parameters = {
@@ -326,6 +334,10 @@ namespace DTcms.DAL
                 if (ds.Tables[0].Rows[0]["Duration"].ToString() != "")
                 {
                     model.Duration = decimal.Parse(ds.Tables[0].Rows[0]["Duration"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["UserGroupCallIndex"].ToString() != "")
+                {
+                    model.UserGroupCallIndex = ds.Tables[0].Rows[0]["UserGroupCallIndex"].ToString();
                 }
 
                 return model;
@@ -433,6 +445,10 @@ namespace DTcms.DAL
                 if (dr[i]["Duration"].ToString() != "")
                 {
                     row["Duration"] = decimal.Parse(dr[i]["Duration"].ToString());
+                }
+                if (dr[i]["UserGroupCallIndex"].ToString() != "")
+                {
+                    row["UserGroupCallIndex"] = dr[i]["UserGroupCallIndex"].ToString();
                 }
                 newData.Rows.Add(row);
                 //调用自身迭代
