@@ -915,18 +915,34 @@ namespace DTcms.DAL
         /// <returns></returns>
         public int GetStockQuantity(int id, int goods_id)
         {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select stock_quantity from " + databaseprefix
-                          + "article_goods where id=@goods_id and article_id=@id");
-            SqlParameter[] parameters =
+            if (goods_id != 0)
             {
-                new SqlParameter("@goods_id",SqlDbType.Int),
-                new SqlParameter("@id",SqlDbType.Int)
-            };
-            parameters[0].Value = goods_id;
-            parameters[1].Value = id;
-            int result = Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString(), parameters));
-            return result;
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("select stock_quantity from " + databaseprefix
+                              + "article_goods where id=@goods_id and article_id=@id");
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@goods_id", SqlDbType.Int),
+                    new SqlParameter("@id", SqlDbType.Int)
+                };
+                parameters[0].Value = goods_id;
+                parameters[1].Value = id;
+                int result = Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString(), parameters));
+                return result;
+            }
+            else
+            {
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("select stock_quantity from " + databaseprefix
+                              + "article_attribute_value where article_id=@id");
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@id", SqlDbType.Int)
+                };
+                parameters[0].Value = id;
+                int result = Convert.ToInt32(DbHelperSQL.GetSingle(strSql.ToString(), parameters));
+                return result;
+            }
         }
 
         /// <summary>

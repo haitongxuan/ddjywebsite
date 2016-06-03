@@ -200,7 +200,7 @@ namespace DTcms.DAL
             strSql.Append(" from " + databaseprefix + "user_groups");
             strSql.Append(" where call_index=@call_index");
             SqlParameter[] parameters = {
-                    new SqlParameter("@call_index", SqlDbType.Int,4)};
+                    new SqlParameter("@call_index", SqlDbType.NVarChar,50)};
             parameters[0].Value = call_index;
 
             DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);

@@ -517,20 +517,23 @@ namespace DTcms.Web.admin.article
             try
             {
                 List<Model.article_item> itemList = new BLL.article_item().GetList(model.id);
-                List<jsonObjet> l = new List<jsonObjet>();
-                foreach (var item in itemList)
+                if (itemList != null)
                 {
-                    l.Add(new jsonObjet
+                    List<jsonObjet> l = new List<jsonObjet>();
+                    foreach (var item in itemList)
                     {
-                        id = item.item_article_id,
-                        img = item.item_img_url,
-                        value = item.item_title
-                    });
-                }
+                        l.Add(new jsonObjet
+                        {
+                            id = item.item_article_id,
+                            img = item.item_img_url,
+                            value = item.item_title
+                        });
+                    }
 
-                hide_item_article_list_str = JsonHelper.ObjectToJSON(l);
-                rptItemArticle.DataSource = itemList;
-                rptItemArticle.DataBind();
+                    hide_item_article_list_str = JsonHelper.ObjectToJSON(l);
+                    rptItemArticle.DataSource = itemList;
+                    rptItemArticle.DataBind();
+                }
             }
             catch (Exception ex)
             {

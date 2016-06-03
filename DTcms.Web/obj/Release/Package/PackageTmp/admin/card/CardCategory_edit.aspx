@@ -94,6 +94,14 @@
                 </dd>
             </dl>
             <dl>
+                <dt>对应用户组调用名称</dt>
+                <dd>
+                    <asp:TextBox ID="txtUserGroupCallIndex" runat="server" CssClass="input normal"  datatype="/^\s*$|^[a-zA-Z0-9\-\_]{2,50}$/" errormsg="请填写正确的别名" sucmsg=" "
+                        ajaxurl=""></asp:TextBox>
+                    <span class="Validform_checktip">类别的调用别名，只允许字母、数字、下划线</span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>描述</dt>
                 <dd>
                     <asp:TextBox ID="txtDescribe" runat="server" CssClass="input normal" datatype="" sucmsg=" "

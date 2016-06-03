@@ -52,7 +52,7 @@
             $(".upload-video").InitUploader({ filesize: "<%=siteConfig.videosize %>", sendurl: "../../tools/upload_ajax.ashx", swf: "../../scripts/webuploader/uploader.swf", filetypes: "<%=siteConfig.videoextension %>" });
             $(".upload-album").InitUploader({ btntext: "批量上传", multiple: true, water: true, thumbnail: true, filesize: "<%=siteConfig.imgsize %>", sendurl: "../../tools/upload_ajax.ashx", swf: "../../scripts/webuploader/uploader.swf" });
             //初始化明细json
-            var jsonitemstr = <%=hide_item_article_list_str%>;
+            var jsonitemstr = '<%=hide_item_article_list_str%>';
             var itemArr = eval(jsonitemstr);
             $("hide_item_article_list").val(itemArr);
             //设置封面图片的样式

@@ -106,10 +106,21 @@ namespace DTcms.BLL
                 password = DESEncrypt.Encrypt(password, salt);
             }
             var user = dal.GetModel(user_name, password, emaillogin, mobilelogin);
-            var now = DateTime.Now;
-            if (now > user.group_end_time || now < user.group_start_time)
+            if (user != null)
             {
-                user.group_id = gdal.GetDefault().id;
+                if (user.group_end_time != null && user.group_end_time != null)
+                {
+                    var now = DateTime.Now;
+                    if (now > user.group_end_time || now < user.group_start_time)
+                    {
+                        user.group_id = gdal.GetDefault().id;
+                    }
+                }
+                else
+                {
+                    user.group_end_time = DateTime.MinValue;
+                    user.group_start_time = DateTime.MinValue;
+                }
             }
             return user;
         }
