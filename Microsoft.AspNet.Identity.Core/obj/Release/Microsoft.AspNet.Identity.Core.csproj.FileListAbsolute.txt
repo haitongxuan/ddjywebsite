@@ -1,0 +1,8 @@
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\bin\Release\Microsoft.AspNet.Identity.Core.XML
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\bin\Release\Microsoft.AspNet.Identity.Core.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\bin\Release\Microsoft.AspNet.Identity.Core.pdb
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\obj\Release\Microsoft.AspNet.Identity.Core.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\obj\Release\Microsoft.AspNet.Identity.Resources.resources
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\obj\Release\Microsoft.AspNet.Identity.Core.csproj.GenerateResource.Cache
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\obj\Release\Microsoft.AspNet.Identity.Core.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Core\obj\Release\Microsoft.AspNet.Identity.Core.pdb

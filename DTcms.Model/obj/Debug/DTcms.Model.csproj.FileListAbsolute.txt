@@ -56,3 +56,11 @@ C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Common.pd
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.dll
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.pdb
+E:\vs_workspace\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Model.XML
+E:\vs_workspace\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Model.dll
+E:\vs_workspace\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Model.pdb
+E:\vs_workspace\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.Model\bin\Debug\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.dll
+E:\vs_workspace\ddjywebsite\DTcms.Model\obj\Debug\DTcms.Model.pdb

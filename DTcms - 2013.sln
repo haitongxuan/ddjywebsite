@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTcms.Web", "DTcms.Web\DTcms.Web.csproj", "{71ADD9EF-D3AF-4AFE-8427-D10A52BAAF90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTcms.Common", "DTcms.Common\DTcms.Common.csproj", "{6468CBF1-9D41-4231-8814-14491922FECC}"
@@ -38,6 +36,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.Identity.JustEF", "Microsoft.AspNet.Identity.JustEF\Microsoft.AspNet.Identity.JustEF.csproj", "{D9CE0307-A8C8-4ABE-BB58-D30DD838697E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AspNet.Identity.Owin", "Microsoft.AspNet.Identity.Owin\Microsoft.AspNet.Identity.Owin.csproj", "{943170EB-F4E7-4A6D-989E-2CF6C681DD89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C9D4D41B-D013-4CEE-809A-04181556DDDE}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

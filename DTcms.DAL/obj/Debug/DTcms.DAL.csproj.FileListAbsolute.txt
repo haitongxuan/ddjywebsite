@@ -88,3 +88,15 @@ C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.xml
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DAL.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DBUtility.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.DBUtility.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Debug\DTcms.Model.xml
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Debug\DTcms.DAL.pdb

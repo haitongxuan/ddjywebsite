@@ -54,3 +54,10 @@ C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DBUtility\bin\Debug\DTcms.Commo
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+E:\vs_workspace\ddjywebsite\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb

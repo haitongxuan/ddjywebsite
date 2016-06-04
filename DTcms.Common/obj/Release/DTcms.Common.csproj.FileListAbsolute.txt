@@ -8,3 +8,8 @@ C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Common\bin\Release\DTcms.Common
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.csprojResolveAssemblyReference.cache
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.dll
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.Common\bin\Release\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.Common\bin\Release\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.Common\obj\Release\DTcms.Common.pdb

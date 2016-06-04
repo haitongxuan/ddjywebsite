@@ -1,0 +1,15 @@
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.JustEF.dll.config
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.JustEF.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.JustEF.pdb
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\EntityFramework.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\EntityFramework.SqlServer.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.Core.pdb
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\EntityFramework.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Debug\EntityFramework.SqlServer.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Debug\Microsoft.AspNet.Identity.JustEF.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Debug\Microsoft.AspNet.Identity.JustEF.IdentityResources.resources
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Debug\Microsoft.AspNet.Identity.JustEF.csproj.GenerateResource.Cache
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Debug\Microsoft.AspNet.Identity.JustEF.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Debug\Microsoft.AspNet.Identity.JustEF.pdb

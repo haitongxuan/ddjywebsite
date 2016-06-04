@@ -9,6 +9,21 @@
             文章主实体类
             </summary>
         </member>
+        <member name="F:DTcms.Model.article._fields">
+            <summary>
+            扩展字段字典
+            </summary>
+        </member>
+        <member name="F:DTcms.Model.article._albums">
+            <summary>
+            图片相册
+            </summary>
+        </member>
+        <member name="F:DTcms.Model.article._attach">
+            <summary>
+            内容附件
+            </summary>
+        </member>
         <member name="P:DTcms.Model.article.id">
             <summary>
             自增ID
@@ -132,21 +147,6 @@
         <member name="P:DTcms.Model.article.update_time">
             <summary>
             修改时间
-            </summary>
-        </member>
-        <member name="F:DTcms.Model.article._fields">
-            <summary>
-            扩展字段字典
-            </summary>
-        </member>
-        <member name="F:DTcms.Model.article._albums">
-            <summary>
-            图片相册
-            </summary>
-        </member>
-        <member name="F:DTcms.Model.article._attach">
-            <summary>
-            内容附件
             </summary>
         </member>
         <member name="P:DTcms.Model.article.goods">
@@ -664,6 +664,11 @@
             商品规格
             </summary>
         </member>
+        <member name="F:DTcms.Model.article_spec._values">
+            <summary>
+            规格值
+            </summary>
+        </member>
         <member name="P:DTcms.Model.article_spec.id">
             <summary>
             自增ID
@@ -687,11 +692,6 @@
         <member name="P:DTcms.Model.article_spec.sort_id">
             <summary>
             排序数字
-            </summary>
-        </member>
-        <member name="F:DTcms.Model.article_spec._values">
-            <summary>
-            规格值
             </summary>
         </member>
         <member name="T:DTcms.Model.article_spec_value">

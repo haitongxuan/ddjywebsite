@@ -1,0 +1,1 @@
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.Owin\obj\Release\Microsoft.AspNet.Identity.Owin.csprojResolveAssemblyReference.cache

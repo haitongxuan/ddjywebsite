@@ -20,3 +20,14 @@ C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\bin\Release\DTcms.Model.pdb
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.csprojResolveAssemblyReference.cache
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.dll
 C:\Users\justable\Source\Repos\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.DAL.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.DAL.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.Common.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.DBUtility.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.Model.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.Common.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.DBUtility.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\bin\Release\DTcms.Model.pdb
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.csprojResolveAssemblyReference.cache
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.dll
+E:\vs_workspace\ddjywebsite\DTcms.DAL\obj\Release\DTcms.DAL.pdb
