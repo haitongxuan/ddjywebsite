@@ -1,3 +1,15 @@
 E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Release\Microsoft.AspNet.Identity.JustEF.csprojResolveAssemblyReference.cache
 E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Release\Microsoft.AspNet.Identity.JustEF.IdentityResources.resources
 E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Release\Microsoft.AspNet.Identity.JustEF.csproj.GenerateResource.Cache
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.JustEF.dll.config
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.JustEF.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.JustEF.pdb
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\EntityFramework.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\EntityFramework.SqlServer.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.Core.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.Core.pdb
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\Microsoft.AspNet.Identity.Core.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\EntityFramework.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\bin\Release\EntityFramework.SqlServer.xml
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Release\Microsoft.AspNet.Identity.JustEF.dll
+E:\vs_workspace\ddjywebsite\Microsoft.AspNet.Identity.JustEF\obj\Release\Microsoft.AspNet.Identity.JustEF.pdb

@@ -1,0 +1,1143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DTcms.Service</name>
+    </assembly>
+    <members>
+        <member name="T:DTcms.Service.BaseService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.VerifySmsCode(System.String,System.String,System.String)">
+            <summary>
+            校检手机验证码
+            </summary>
+            <param name="username">用户名</param>
+            <param name="token">token</param>
+            <param name="strcode">验证码</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.VerifyInviteReg(System.String,System.String)">
+            <summary>
+            邀请注册处理方法
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="inviteCode">邀请码</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.SendVerifySmsCode(System.String,System.String)">
+            <summary>
+            发送手机短信验证码
+            </summary>
+            <param name="username">用户名</param>
+            <param name="token">token</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.SendVerifyEmail(System.String)">
+            <summary>
+            Email验证发送邮件
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.CheckUserLogined(System.String)">
+            <summary>
+            验证用户是否登录
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.GetUserInfo(System.String,System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="username">用户名</param>
+            <param name="token">token</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IBaseService.CheckAppKey(System.String)">
+            <summary>
+            检验程序接口是否能被调用
+            </summary>
+            <param name="appKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleList(System.String,System.Int32,System.String)">
+            <summary>
+            文章列表
+            </summary>
+            <param name="channelName">频道名称</param>
+            <param name="top">显示条数</param>
+            <param name="strWhere">查询条件</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleList(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            文章列表
+            </summary>
+            <param name="channelName">频道名称</param>
+            <param name="categoryId">分类ID</param>
+            <param name="top">显示条数</param>
+            <param name="strWhere">查询条件</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleList(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            文章列表
+            </summary>
+            <param name="channel_name">频道名称</param>
+            <param name="category_id">分类ID</param>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <param name="orderby">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleList(System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Int32@)">
+            <summary>
+            文章分页列表(自定义页面大小)
+            </summary>
+            <param name="channel_name">频道名称</param>
+            <param name="category_id">分类ID</param>
+            <param name="page_size">页面大小</param>
+            <param name="page_index">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="orderby">排序</param>
+            <param name="totalcount">总记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleList(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.Int32,System.String,System.String,System.Int32@)">
+            <summary>
+            根据频道及规格获得分页列表
+            </summary>
+            <param name="channelName">频道名称</param>
+            <param name="categoryId">分类ID</param>
+            <param name="speIds">规格列表</param>
+            <param name="pageSize">分页大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="orderby">排序</param>
+            <param name="totalcount">总记录数</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleTags(System.Int32,System.String)">
+            <summary>
+            文章Tags标签列表
+            </summary>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleContent(System.String)">
+            <summary>
+            根据调用标识取得内容
+            </summary>
+            <param name="callIndex">调用别名</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleImgUrl(System.Int32)">
+            <summary>
+            获取对应的图片路径
+            </summary>
+            <param name="articleId">信息ID</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleField(System.Int32,System.String)">
+            <summary>
+            获取文章扩展属性
+            </summary>
+            <param name="articleId">文章主键</param>
+            <param name="fieldName">扩展属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleField(System.String,System.String)">
+            <summary>
+            获取文章扩展属性
+            </summary>
+            <param name="callIndex">调用名称</param>
+            <param name="fieldName">扩展属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticle(System.Int32)">
+            <summary>
+            获取文章对象
+            </summary>
+            <param name="articleId">调用名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticle(System.String)">
+            <summary>
+            获取文章对象
+            </summary>
+            <param name="callIndex">调用名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetPrevandNextArticleId(System.Int32,System.Int32)">
+            <summary>
+            获取上一条下一条的编号
+            </summary>
+            <param name="type">-1代表上一条，1代表下一条</param>
+            <param name="articleId">文章主键</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.ViewArticleClick(System.Int32)">
+            <summary>
+            统计及输出阅读次数
+            </summary>
+            <param name="articleId">文章主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.ArticleClickAdd(System.Int32)">
+            <summary>
+            增加文章点击量
+            </summary>
+            <param name="artcleId"></param>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.ViewCommentCount(System.Int32)">
+            <summary>
+            输出评论总数
+            </summary>
+            <param name="articleId">文章主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.ViewAttachCount(System.Int32)">
+            <summary>
+            输出附件下载总数
+            </summary>
+            <param name="articleAttachId">附件主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.CommentAdd(System.String,System.Int32,System.String)">
+            <summary>
+            提交评论的处理方法
+            </summary>
+            <param name="articleId">文章主键</param>
+            <param name="content">评论内容</param>
+            <param name="username">用户名</param>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.CommentList(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            取得评论列表方法
+            </summary>
+            <param name="articleId">文章主键</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">分页数量</param>
+            <param name="totalCount">总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IArticleService.GetArticleCategories(System.Int32,System.Int32)">
+            <summary>
+            获取文章类型列表
+            </summary>
+            <param name="parentId"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DTcms.Service.ICardService">
+            <summary>
+            卡片服务
+            </summary>
+        </member>
+        <member name="M:DTcms.Service.ICardService.CreateUserCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，为用户创建卡片
+            </summary>
+            <param name="callindex">卡片类别调用名称</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICardService.CheckUserCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，检查用户卡片是否有效
+            </summary>
+            <param name="callIndex">卡片类别调用名称</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICardService.CheckUserCard(System.String)">
+            <summary>
+            检验卡片是否有效
+            </summary>
+            <param name="code">卡片编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICardService.GetUsersCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，获取卡片信息
+            </summary>
+            <param name="callIndex">调用名称</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICardService.GetUsersCard(System.String)">
+            <summary>
+            根据卡片编号获得卡片信息
+            </summary>
+            <param name="code">卡片编号</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:DTcms.Service.ICardService.GetCards(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DTcms.Service.ICardService.GetAllCards(System.String)">
+            <summary>
+            获取用户的所有的卡片
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.CardService.CreateUserCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，为用户创建卡片
+            </summary>
+            <param name="callindex">卡片类别调用名称</param>
+            <param name="username">用户名</param>
+            <param name="token">token</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.CardService.CheckUserCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，检查用户卡片是否有效
+            </summary>
+            <param name="callIndex">卡片类别调用名称</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.CardService.GetUsersCard(System.String,System.String)">
+            <summary>
+            根据卡片类别调用名称和用户名，获取卡片信息
+            </summary>
+            <param name="callIndex"></param>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.CardService.GetCards(System.String)">
+            <summary>
+            获取用户的有效期内的卡片
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.CardService.GetAllCards(System.String)">
+            <summary>
+            获取用户的所有的卡片
+            </summary>
+            <param name="username"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DTcms.Service.Exeception.AppCommonException">
+            <summary>
+            普通代码异常
+            </summary>
+        </member>
+        <member name="F:DTcms.Service.Exeception.AppCommonException._status">
+            <summary>
+            101
+            </summary>
+        </member>
+        <member name="T:DTcms.Service.Exeception.AppNoLoginException">
+            <summary>
+            未登录异常
+            </summary>
+        </member>
+        <member name="P:DTcms.Service.Exeception.AppNoLoginException.Status">
+            <summary>
+            0
+            </summary>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取课程列表
+            </summary>
+            <param name="top">显示条数，0全部</param>
+            <param name="categoryId">类别编号，全部类别</param>
+            <param name="strWhere">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumList(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            获取课程列表
+            </summary>
+            <param name="top">显示条数，0全部</param>
+            <param name="categoryId">类别编号，全部类别</param>
+            <param name="strwhere">查询条件</param>
+            <param name="orderby">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumList(System.Int32,System.Int32,System.Int32,System.String,System.String,System.Int32@)">
+            <summary>
+            获取课程列表
+            </summary>
+            <param name="categoryId">类别编号，全部类别</param>
+            <param name="pageSize">分页大小</param>
+            <param name="pageIndex">页码</param>
+            <param name="strWhere">查询</param>
+            <param name="orderby">排序</param>
+            <param name="totalCount">总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetRelationCurriculumList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取关联课程列表
+            </summary>
+            <param name="top">显示个数</param>
+            <param name="curriculumId">被关联课程主键</param>
+            <param name="strwhere">查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetRelationCurriculumList(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            获取关联课程列表
+            </summary>
+            <param name="top">显示个数</param>
+            <param name="curriculumId">被关联课程主键</param>
+            <param name="strwhere">查询语句</param>
+            <param name="orderby">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetRelationCurriculumList(System.Int32,System.Int32,System.Int32,System.String,System.String,System.Int32@)">
+            <summary>
+            获取关联课程列表
+            </summary>
+            <param name="curriculumId">被关联课程主键</param>
+            <param name="pageSize">分页大小</param>
+            <param name="pageIndex">页码</param>
+            <param name="strWhere">查询</param>
+            <param name="orderby">排序</param>
+            <param name="totalCount">总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumDescribe(System.Int32)">
+            <summary>
+            获取课程描述
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumImgUrl(System.Int32)">
+            <summary>
+            获取课程封面
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculum(System.Int32)">
+            <summary>
+            获取课程实体
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.CheckUserCurriculum(System.String,System.Int32)">
+            <summary>
+            检查用户数是否观看过该课程
+            </summary>
+            <param name="username">用户名</param>
+            <param name="curriculumId">课程主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.UserCurriculumItems(System.String,System.Int32)">
+            <summary>
+            获取用户已经观看过的课程章节
+            </summary>
+            <param name="username">用户名</param>
+            <param name="curriculumId">课程主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.UserCurriculumAdd(System.String,System.Int32,System.Int32)">
+            <summary>
+            用户观看课程内容，新增观看记录
+            </summary>
+            <param name="username">用户名</param>
+            <param name="curriulumId">课程主键</param>
+            <param name="curriculumItemId">课程章节主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.CheckCurriculumVip(System.Int32)">
+            <summary>
+            检查课程是否需要vip身份才能观看
+            </summary>
+            <param name="curriculumId">课程主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetMediaRealPath(System.String)">
+            <summary>
+            获取课程章节对应媒体地址
+            </summary>
+            <param name="mediaCode">媒体编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ICurriculumService.GetCurriculumTimeLength(System.Int32)">
+            <summary>
+            获取课程的时长
+            </summary>
+            <param name="curriculumId">课程主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IExpressService.GetExpressList(System.Int32,System.String)">
+            <summary>
+            返回配送列表
+            </summary>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IExpressService.GetExpressTitle(System.Int32)">
+            <summary>
+            返回配送方式的标题
+            </summary>
+            <param name="expressId">ID</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetBoardName(System.Int32)">
+            <summary>
+            获取板块名称
+            </summary>
+            <param name="boardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetBoardList(System.Int32)">
+            <summary>
+            获取所有板块列表
+            </summary>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetBoardGetchildlist(System.Int32)">
+            <summary>
+            取得该频道指定类别下的列表
+            </summary>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetCategoryId(System.Int32)">
+            <summary>
+            返回父类别ID
+            </summary>
+            <param name="categoryId">类别ID</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetPostList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取帖子列表
+            </summary>
+            <param name="boardId"></param>
+            <param name="top"></param>
+            <param name="whereStr"></param>
+            <param name="orderby"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.GetReplyList(System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            获取跟帖分页列表
+            </summary>
+            <param name="postId"></param>
+            <param name="username"></param>
+            <param name="top"></param>
+            <param name="whereStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IForumService.LoopChannelMenu(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            递归找到父节点
+            </summary>
+            <param name="strTxt"></param>
+            <param name="categoryId">类别主键</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostAdd(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            发布帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="content">内容</param>
+            <param name="title">标题</param>
+            <param name="boardId">板块主键</param>
+            <param name="postId">帖子主键</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostReply(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            回复帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="content">内容</param>
+            <param name="title">标题</param>
+            <param name="boardId">板块主键</param>
+            <param name="postId">帖子主键</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostEdit(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            编辑帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="content">内容</param>
+            <param name="title">标题</param>
+            <param name="postId">帖子主键</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostMove(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            移动帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="toBoardId">板块主键</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostDelete(System.String,System.Int32,System.String)">
+            <summary>
+            删除帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostSetLock(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            锁定帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="optIp">操作说明</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostSetTop(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            置顶帖子
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="optIp">操作说明</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostSetRed(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            设置精华
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="optIp">操作说明</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.PostSetHot(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            设置热门
+            </summary>
+            <param name="username">用户名</param>
+            <param name="postId">帖子主键</param>
+            <param name="optIp">操作说明</param>
+            <param name="opRemark">操作备注</param>
+        </member>
+        <member name="M:DTcms.Service.IForumService.IsModerator(System.Int32,System.String)">
+            <summary>
+            判断是否版主
+            </summary>
+            <param name="boardid">板块主键</param>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:DTcms.Service.IGoodsService.GetArticleGoodsSpec(System.Int32,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DTcms.Service.IGoodsService.GetArticleSpecParent(System.String,System.Int32)">
+            <summary>
+            根据频道名称及类别ID查询父规格列表(慎用)
+            </summary>
+            <param name="channel_name">频道名称</param>
+            <param name="category_id">分类ID</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IGoodsService.GetArticleSpecChild(System.Int32)">
+            <summary>
+            根据父ID查询规格列表
+            </summary>
+            <param name="parent_id">父ID</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetUserOrderCount(System.String,System.String)">
+            <summary>
+            统计订单数量
+            </summary>
+            <param name="username">用户名</param>
+            <param name="strwhere">查询条件</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderList(System.String,System.Int32,System.String)">
+            <summary>
+            订单列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            订单分页列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderGoodsList(System.Int32)">
+            <summary>
+            返回订单商品列表
+            </summary>
+            <param name="orderId">订单</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderStatus(System.Int32)">
+            <summary>
+            返回订单状态
+            </summary>
+            <param name="id">订单ID</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderPaymentStatus(System.Int32)">
+            <summary>
+            返回订单是否需要在线支付
+            </summary>
+            <param name="orderId">订单ID</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:DTcms.Service.IOrderService.GetOrderTaxamount(System.Decimal)">
+            <summary>
+            返回税金费用金额
+            </summary>
+            <param name="totalAmount">总金额</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:DTcms.Service.IPaymentService.GetPaymentList(System.Int32,System.String)">
+            <summary>
+            返回支付列表
+            </summary>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IPaymentService.GetPaymentTitle(System.Int32)">
+            <summary>
+            返回支付类型的标题
+            </summary>
+            <param name="paymentId">ID</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IPaymentService.GetPaymentPoundageAmount(System.Int32,System.Decimal)">
+            <summary>
+            返回支付费用金额
+            </summary>
+            <param name="paymentId">支付ID</param>
+            <param name="totalAmount">总金额</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.GetCartQuantity(System.String)">
+            <summary>
+            返回购物车商品总数
+            </summary>
+            <returns>Int</returns>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.GetCartList(System.String)">
+            <summary>
+            返回购物车列表
+            </summary>
+            <returns>IList</returns>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.GetArticleGoodsInfo(System.Int32,System.String)">
+            <summary>
+            获取对应的商品信息
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.CartGoodsAdd(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            购物车加入商品
+            </summary>
+            <param name="username">用户名</param>
+            <param name="articleId">文章主键</param>
+            <param name="goodsId">商品主键</param>
+            <param name="quantity">数量</param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.CartGoodsBuy(System.String,System.String)">
+            <summary>
+            加入结账商品
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.CartGoodsUpdate(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            修改购物车商品
+            </summary>
+            <param name="username">用户名</param>
+            <param name="articleId">文章主键</param>
+            <param name="goodsId">商品主键</param>
+            <param name="quantity">数量</param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.CartGoodsDelete(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            删除购物车商品
+            </summary>
+            <param name="username">用户名</param>
+            <param name="articleId">文章主键</param>
+            <param name="goodsId">商品主键</param>
+            <param name="clear">是否清空购物车，0否1是</param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.OrderSave(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            保存购物订单
+            </summary>
+            <param name="username">用户名</param>
+            <param name="hideGoodsJson">商品json字符串</param>
+            <param name="bookId">地址主键</param>
+            <param name="paymentId">支付方式主键</param>
+            <param name="expressId">配送方式主键</param>
+            <param name="isInvoice">是否开具发票</param>
+            <param name="acceptName">收件人</param>
+            <param name="province">省标识</param>
+            <param name="city">市标识</param>
+            <param name="area">区标识</param>
+            <param name="address">地址</param>
+            <param name="telephone">电话</param>
+            <param name="mobile">手机</param>
+            <param name="email">邮箱</param>
+            <param name="postCode">邮政编号</param>
+            <param name="message">信息</param>
+            <param name="invoiceTitle">发票抬头</param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.OrderCancel(System.String,System.String)">
+            <summary>
+            用户取消订单
+            </summary>
+            <param name="orderNo">订单编号</param>
+        </member>
+        <member name="M:DTcms.Service.IShoppingService.ViewCartCount(System.String)">
+            <summary>
+            输出购物车总数
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.ISiteService.GetValiCode(System.String)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="deviceId">设备号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserAddressService.UserAddressEdit(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            编辑用户地址
+            </summary>
+            <param name="username">用户名</param>
+            <param name="addressId">地址主键，0为新增</param>
+            <param name="acceptName">收件人地址</param>
+            <param name="province">省标识</param>
+            <param name="city">市标识</param>
+            <param name="area">区标识</param>
+            <param name="address">地址</param>
+            <param name="mobile">手机</param>
+            <param name="telephone">电话</param>
+            <param name="email">电邮</param>
+            <param name="postCode">邮政编码</param>
+        </member>
+        <member name="M:DTcms.Service.IUserAddressService.UserAddressDefault(System.String,System.Int32)">
+            <summary>
+            用户设置默认地址
+            </summary>
+            <param name="username">用户名</param>
+            <param name="addressId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserAddressService.UserAddressDelete(System.String,System.Int32)">
+            <summary>
+            用户删除收货地址
+            </summary>
+            <param name="username">用户名</param>
+            <param name="addressId">收货地址主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:DTcms.Service.IUserService">
+            <summary>
+            用户服务接口
+            </summary>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetOauthAppList(System.Int32,System.String)">
+            <summary>
+            OAuth平台列表
+            </summary>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserAvatar(System.String)">
+            <summary>
+            返回用户头像图片地址
+            </summary>
+            <param name="userName">用户名</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserMessageCount(System.String,System.String)">
+            <summary>
+            统计短消息数量
+            </summary>
+            <param name="username">用户名</param>
+            <param name="strwhere">查询条件</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserMessageList(System.String,System.Int32,System.String)">
+            <summary>
+            短消息列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserMessageList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            短信息分页列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserPointList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            积分明细分页列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserAmountList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            余额明细分页列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserRechargeList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            充值记录分页列表
+            </summary>
+            <param name="token">用户token</param>
+            <param name="pageSize">页面大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserInviteList(System.String,System.Int32,System.String)">
+            <summary>
+            用户邀请码列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetInviteStatus(System.String,System.String)">
+            <summary>
+            返回邀请码状态
+            </summary>
+            <param name="username">用户名</param>
+            <param name="strCode">邀请码</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserAddrBookList(System.String,System.Int32,System.String)">
+            <summary>
+            收货地址列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="top">显示条数</param>
+            <param name="strwhere">查询条件</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.GetUserAddrBookList(System.String,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            收货地址分页列表
+            </summary>
+            <param name="username">用户名</param>
+            <param name="page_size">页面大小</param>
+            <param name="page_index">当前页码</param>
+            <param name="strwhere">查询条件</param>
+            <param name="totalcount">总记录数</param>
+            <returns>DateTable</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserInfoEdit(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            编辑用户信息
+            </summary>
+            <param name="username">用户名</param>
+            <param name="nickName">用户昵称</param>
+            <param name="sex">性别</param>
+            <param name="birthday">生日</param>
+            <param name="email">邮箱地址</param>
+            <param name="mobile">手机号</param>
+            <param name="telephone">电话</param>
+            <param name="qq">QQ号</param>
+            <param name="msn">msn地址</param>
+            <param name="province">省标识</param>
+            <param name="city">市标识</param>
+            <param name="area">区标识</param>
+            <param name="address">地址</param>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserEditPassword(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserGetPassword(System.String,System.String)">
+            <summary>
+            取回用户密码
+            </summary>
+            <param name="code"></param>
+            <param name="mobile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserResetPassword(System.String,System.String)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="code"></param>
+            <param name="npassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserLogin(System.String,System.String,System.String@)">
+            <summary>
+            登录验证
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns>Json String</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.CheckUserLogin(System.String)">
+            <summary>
+            判断用户是否已经登录
+            </summary>
+            <param name="username"></param>
+            <returns>Json String</returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserRegister(System.String,System.String,System.String,System.String)">
+            <summary>
+            注册用户信息
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="email">邮箱</param>
+            <param name="mobile">手机号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserVerifySmscode(System.String)">
+            <summary>
+            发送手机短信验证码
+            </summary>
+            <param name="mobile">手机号码</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserInviteCode(System.String)">
+            <summary>
+            用户申请邀请码
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserPointConvert(System.Decimal,System.String)">
+            <summary>
+            用户积分兑换
+            </summary>
+            <param name="username">用户名</param>
+            <param name="amount">兑换积分数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserAmountRecharge(System.String,System.Int32,System.Decimal)">
+            <summary>
+            用户在线充值
+            </summary>
+            <param name="username">用户名</param>
+            <param name="paymentId">支付主键</param>
+            <param name="amount">充值金额</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserMessageAdd(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            发送站内短消息
+            </summary>
+            <param name="username"></param>
+            <param name="sendSave">发送保存，0不保存，1保存</param>
+            <param name="title">标题</param>
+            <param name="content">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserPointDelete(System.String,System.Int32)">
+            <summary>
+            删除用户积分明细
+            </summary>
+            <param name="username">用户名</param>
+            <param name="id">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserAmountDelete(System.String,System.Int32)">
+            <summary>
+            删除用户收支明细
+            </summary>
+            <param name="username">用户名</param>
+            <param name="id">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserRechargeDelete(System.String,System.Int32)">
+            <summary>
+            删除用户充值记录
+            </summary>
+            <param name="username">用户名</param>
+            <param name="id">ID</param>
+        </member>
+        <member name="M:DTcms.Service.IUserService.UserMessageDelete(System.String,System.Int32)">
+            <summary>
+            删除用户消息
+            </summary>
+            <param name="username">用户名</param>
+            <param name="id">ID</param>
+        </member>
+        <member name="M:DTcms.Service.IUserTokenService.CreateUserToken(System.String,System.Decimal,System.String,System.String)">
+            <summary>
+            创建用户token
+            </summary>
+            <param name="username">用户名</param>
+            <param name="seconds">过期时长</param>
+            <param name="ipAddress">IP地址</param>
+            <param name="deviceId">设备编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserTokenService.GetUserToken(System.String)">
+            <summary>
+            获取用户的token
+            </summary>
+            <param name="username">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserTokenService.CheckUserToken(System.String,System.String)">
+            <summary>
+            检查用户token，是否过期，设备号是否一致
+            </summary>
+            <param name="token"></param>
+            <param name="deviceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DTcms.Service.IUserTokenService.OverdueUserToken(System.String)">
+            <summary>
+            设置用户token过期
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

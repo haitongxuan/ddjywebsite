@@ -5,7 +5,7 @@
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile>2015-05-10T23:24:04.4408185+08:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2016-06-04T13:50:16.2621932+08:00</TimeStampOfAssociatedLegacyPublishXmlFile>
     <_PublishTargetUrl>D:\dtcms</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
