@@ -117,7 +117,7 @@ namespace DTcms.WebApi.Controllers
                             comment.avatar = userModel.avatar;
                         }
                     }
-                    
+                    comment.content = dr["content"].ToString();
                 }
             }
             return list;
