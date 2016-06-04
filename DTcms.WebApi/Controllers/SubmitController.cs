@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -31,9 +32,15 @@ namespace DTcms.WebApi.Controllers
                 _userManager = value;
             }
         }
+        #region 添加文章评论
+        /// <summary>
+        /// 添加文章评论
+        /// </summary>
+        /// <param name="amodel"></param>
+        /// <returns></returns>
         [System.Web.Http.Authorize]
         [System.Web.Http.Route("comment_add")]
-        public async Task<StatusModel> CommandAdd(CommandAddModel amodel)
+        public async Task<StatusModel> CommentAdd(CommandAddModel amodel)
         {
             StringBuilder strTxt = new StringBuilder();
             BLL.article_comment bll = new BLL.article_comment();
@@ -79,10 +86,65 @@ namespace DTcms.WebApi.Controllers
             }
             return new StatusModel() { status = 0, msg = "对不起，保存过程中发生错误！" };
         }
+        #endregion
+
+        #region 取得评论列表方法=============================
+
+        public List<CommentModel> CommentList(CommentListPostModel model)
+        {
+            int totalcount;
+            if (model.articleId == 0 || model.pageSize == 0)
+            {
+                throw new Exception("获取失败，传输参数有误！");
+            }
+            BLL.article_comment bll = new BLL.article_comment();
+            DataSet ds = bll.GetList(model.pageSize, model.pageIndex, string.Format("is_lock=0 and article_id={0}", model.articleId.ToString()), "add_time asc", out totalcount);
+            var list = new List<CommentModel>();
+            //如果记录存在
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    DataRow dr = ds.Tables[0].Rows[i];
+                    var comment = new CommentModel();
+                    comment.user_id = int.Parse(dr["user_id"].ToString());
+                    comment.user_name = dr["user_name"].ToString();
+                    if (Convert.ToInt32(dr["user_id"]) > 0)
+                    {
+                        Model.users userModel = new BLL.users().GetModel(Convert.ToInt32(dr["user_id"]));
+                        if (userModel != null)
+                        {
+                            comment.avatar = userModel.avatar;
+                        }
+                    }
+                    
+                }
+            }
+            return list;
+        }
+        #endregion
 
         [System.Web.Http.Authorize]
         [System.Web.Http.Route("getuserinfo")]
         public async Task<ApplicationUser> GetUserInfo()
+        {
+            return await GetUser();
+        }
+        [System.Web.Http.Authorize]
+        [System.Web.Http.Route("getusername")]
+        public string GetUserName()
+        {
+            return User.Identity.Name;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Authorize]
+        [System.Web.Http.Route("helloworld")]
+        public string HelloWorld()
+        {
+            return "Hello world!";
+        }
+
+        private async Task<ApplicationUser> GetUser()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -99,19 +161,6 @@ namespace DTcms.WebApi.Controllers
                 }
             }
             return null;
-        }
-        [System.Web.Http.Authorize]
-        [System.Web.Http.Route("getusername")]
-        public string GetUserName()
-        {
-            return User.Identity.Name;
-        }
-        [System.Web.Http.HttpGet]
-        [System.Web.Http.Authorize]
-        [System.Web.Http.Route("helloworld")]
-        public string HelloWorld()
-        {
-            return "Hello world!";
         }
     }
 }
