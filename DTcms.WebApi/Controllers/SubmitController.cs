@@ -40,7 +40,7 @@ namespace DTcms.WebApi.Controllers
         /// <returns></returns>
         [System.Web.Http.Authorize]
         [System.Web.Http.Route("comment_add")]
-        public async Task<StatusModel> CommentAdd(CommandAddModel amodel)
+        public async Task<StatusModel> CommentAdd(CommentAddModel amodel)
         {
             StringBuilder strTxt = new StringBuilder();
             BLL.article_comment bll = new BLL.article_comment();
