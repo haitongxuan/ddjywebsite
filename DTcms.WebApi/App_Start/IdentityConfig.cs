@@ -9,9 +9,9 @@ namespace DTcms.WebApi
 {
     // 配置此应用程序中使用的应用程序用户管理器。UserManager 在 ASP.NET Identity 中定义，并由此应用程序使用。
 
-    public class ApplicationUserManager : UserManager<ApplicationUser,int>
+    public class ApplicationUserManager : UserManager<ApplicationUser, int>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser,int> store)
+        public ApplicationUserManager(UserStoreIntPk store)
             : base(store)
         {
         }
@@ -20,7 +20,7 @@ namespace DTcms.WebApi
         {
             var manager = new ApplicationUserManager(new UserStoreIntPk(context.Get<ApplicationDbContext>()));
             // 配置用户名的验证逻辑
-            manager.UserValidator = new UserValidator<ApplicationUser,int>(manager)
+            manager.UserValidator = new UserValidator<ApplicationUser, int>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true

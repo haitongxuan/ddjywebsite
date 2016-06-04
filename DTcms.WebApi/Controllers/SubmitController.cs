@@ -18,7 +18,6 @@ namespace DTcms.WebApi.Controllers
     public class SubmitController : ApiController
     {
         Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig();
-        Model.userconfig userConfig = new BLL.userconfig().loadConfig();
         private ApplicationUserManager _userManager;
 
         public ApplicationUserManager UserManager
@@ -85,8 +84,34 @@ namespace DTcms.WebApi.Controllers
         [System.Web.Http.Route("getuserinfo")]
         public async Task<ApplicationUser> GetUserInfo()
         {
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId<int>());
-            return user;
+            if (User.Identity.IsAuthenticated)
+            {
+                string username = User.Identity.GetUserName();
+                string uid = User.Identity.GetUserId();
+                try
+                {
+                    var user = await UserManager.FindByNameAsync(username);
+                    return user;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            return null;
+        }
+        [System.Web.Http.Authorize]
+        [System.Web.Http.Route("getusername")]
+        public string GetUserName()
+        {
+            return User.Identity.Name;
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Authorize]
+        [System.Web.Http.Route("helloworld")]
+        public string HelloWorld()
+        {
+            return "Hello world!";
         }
     }
 }
